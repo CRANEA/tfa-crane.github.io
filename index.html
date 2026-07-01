@@ -16,13 +16,14 @@
         .brokercheck { background-color: #005b82; color: white; padding: 10px 20px; text-decoration: none; border-radius: 3px; font-weight: bold; font-size: 14px; transition: background 0.3s; }
         .brokercheck:hover { background-color: #004360; }
 
-        /* Hero Section with Placeholder Background */
+        /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(0, 43, 64, 0.8), rgba(0, 43, 64, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover; 
             color: white; padding: 100px 5%; text-align: center; 
         }
         .hero h1 { font-size: 2.5em; margin-bottom: 15px; font-weight: 300; letter-spacing: 1px; }
-        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px auto; font-weight: 300; }
+        .hero p.locations { text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; font-size: 0.9em; line-height: 1.8; color: #e0e0e0; }
+        .hero p.subtitle { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px auto; font-weight: 300; }
 
         /* Main Content Container */
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
@@ -70,9 +71,12 @@
 </header>
 
 <div class="hero">
-    <p style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Los Angeles, California</p>
+    <p class="locations">
+        <strong>Infinity Financial Services</strong> &mdash; Oakland, California <br>
+        <strong>Alpha Innovation Partners</strong> &mdash; San Francisco, California &nbsp;|&nbsp; Irvine, California
+    </p>
     <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
-    <p>Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
+    <p class="subtitle">Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
 </div>
 
 <div class="container">
