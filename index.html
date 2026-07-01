@@ -5,112 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi Crane | Alpha Innovation Partners</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        header { background-color: #f4f4f4; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #005b82; }
-        .logo { font-size: 24px; font-weight: bold; color: #005b82; }
-        .brokercheck { background-color: #d9534f; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .hero { background-color: #005b82; color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        h1, h2, h3 { color: #005b82; }
-        .hero h1, .hero h2 { color: white; }
-        .section { margin-bottom: 40px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .service-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #005b82; }
-        .contact-form { background: #f4f4f4; padding: 30px; border-radius: 8px; }
-        input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { background-color: #005b82; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; width: 100%; font-size: 16px; }
+        /* Modern CSS Reset & Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #fcfcfc; }
+        
+        /* Header Layout */
+        header { background-color: #ffffff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-logos { display: flex; align-items: center; gap: 20px; }
+        .header-logos img { height: 65px; width: auto; object-fit: contain; }
+        .brokercheck { background-color: #005b82; color: white; padding: 10px 20px; text-decoration: none; border-radius: 3px; font-weight: bold; font-size: 14px; transition: background 0.3s; }
+        .brokercheck:hover { background-color: #004360; }
+
+        /* Hero Section with Placeholder Background */
+        .hero { 
+            background: linear-gradient(rgba(0, 43, 64, 0.8), rgba(0, 43, 64, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover; 
+            color: white; padding: 100px 5%; text-align: center; 
+        }
+        .hero h1 { font-size: 2.5em; margin-bottom: 15px; font-weight: 300; letter-spacing: 1px; }
+        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px auto; font-weight: 300; }
+
+        /* Main Content Container */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        h2 { color: #005b82; font-size: 2em; margin-bottom: 20px; border-bottom: 2px solid #005b82; padding-bottom: 10px; }
+        
+        /* Two-Column Layout for Bio */
+        .bio-section { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 50px; }
+        .bio-text { flex: 2; min-width: 300px; }
+        .bio-snapshot { flex: 1; min-width: 250px; background: #fff; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #005b82; }
+        .bio-snapshot ul { list-style: none; }
+        .bio-snapshot li { margin-bottom: 15px; font-size: 0.95em; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .service-box { background: white; padding: 30px; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s ease; }
+        .service-box:hover { transform: translateY(-5px); }
+        .service-box h3 { color: #005b82; margin-bottom: 15px; font-size: 1.2em; }
+
+        /* Quote Section */
+        .quote-block { background: #eef5f8; padding: 40px; text-align: center; margin-bottom: 60px; border-radius: 5px; }
+        .quote-block p { font-size: 1.5em; font-style: italic; color: #444; max-width: 800px; margin: auto; }
+        .quote-author { display: block; margin-top: 15px; font-weight: bold; color: #005b82; font-style: normal; }
+
+        /* Contact Form */
+        .contact-section { background: white; padding: 40px; border-radius: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); margin-bottom: 60px; }
+        .form-group { margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; background-color: #f9f9f9; }
+        button { background-color: #005b82; color: white; border: none; padding: 15px 30px; cursor: pointer; border-radius: 4px; font-size: 16px; font-weight: bold; width: 100%; transition: background 0.3s; }
         button:hover { background-color: #004360; }
-        footer { background-color: #222; color: #ccc; padding: 30px 20px; text-align: center; font-size: 12px; }
-        .quote { font-style: italic; font-size: 1.2em; border-left: 4px solid #005b82; padding-left: 15px; color: #555; }
+
+        /* Strict Footer / Legal */
+        footer { background-color: #1a1a1a; color: #999; padding: 50px 5%; font-size: 0.85em; }
+        .footer-content { max-width: 1100px; margin: auto; }
+        .footer-content p { margin-bottom: 15px; text-align: justify; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Alpha Innovation Partners</div> 
+    <div class="header-logos">
+        <img src="aip-logo.png" alt="Alpha Innovation Partners Logo">
+        <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo">
+    </div>
     <a href="https://brokercheck.finra.org/" target="_blank" class="brokercheck">FINRA BrokerCheck</a>
 </header>
 
 <div class="hero">
-    <div class="container">
-        <p>Los Angeles, California</p>
-        <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
-        <p>I’m Avi Crane, a Financial Fiduciary and Investment Advisor Representative focused on helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
-    </div>
+    <p style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Los Angeles, California</p>
+    <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
+    <p>Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
 </div>
 
 <div class="container">
-    <div class="section">
-        <h2>Professional Snapshot</h2>
-        <ul>
-            <li><strong>Current Role:</strong> Financial Fiduciary and Investment Advisor Representative</li>
-            <li><strong>Affiliations:</strong> Alpha Innovation Partners and Infinity Financial Services Advisory</li>
-            <li><strong>Focus Areas:</strong> Retirement planning, estate strategy, tax optimization, life insurance design</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2>Career Background & Approach</h2>
-        <p><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
-        <p><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
-        <p><strong>Who I Serve:</strong> I work with individuals, families, executives, and business owners who want thoughtful guidance around retirement income, wealth preservation, estate planning coordination, and tax-aware financial decision-making.</p>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2>Areas of Focus</h2>
-        <p>These are the planning conversations I most often help clients think through when they are seeking structure, clarity, and next-step direction.</p>
-        <div class="services-grid">
-            <div class="service-box">
-                <h3>Retirement Income Planning</h3>
-                <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
-            </div>
-            <div class="service-box">
-                <h3>Life Insurance Strategy</h3>
-                <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
-            </div>
-            <div class="service-box">
-                <h3>Estate Coordination</h3>
-                <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
-            </div>
-            <div class="service-box">
-                <h3>Tax-Aware Strategy</h3>
-                <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
-            </div>
+    <div class="bio-section">
+        <div class="bio-text">
+            <h2>Career Background & Approach</h2>
+            <p style="margin-bottom: 15px;"><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
+            <p style="margin-bottom: 15px;"><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
+            <p><strong>Who I Serve:</strong> I work with individuals, families, executives, and business owners who want thoughtful guidance around retirement income, wealth preservation, estate planning coordination, and tax-aware financial decision-making.</p>
+        </div>
+        
+        <div class="bio-snapshot">
+            <h3 style="color:#005b82; margin-bottom: 15px;">Professional Snapshot</h3>
+            <ul>
+                <li><strong>Advisor:</strong> Avi Crane</li>
+                <li><strong>Role:</strong> Financial Fiduciary & Investment Advisor Representative</li>
+                <li><strong>Affiliations:</strong> Alpha Innovation Partners & Infinity Financial Services Advisory</li>
+                <li><strong>Email:</strong> crane_avi@aipfinancial.net</li>
+            </ul>
         </div>
     </div>
 
-    <div class="section">
-        <p class="quote">“Good planning starts by helping people understand what matters, what is possible, and what each decision may mean over time.” <br><strong>— Avi Crane</strong></p>
+    <h2>Areas of Focus</h2>
+    <p style="margin-bottom: 30px;">These are the planning conversations I most often help clients think through when they are seeking structure, clarity, and next-step direction.</p>
+    
+    <div class="services-grid">
+        <div class="service-box">
+            <h3>Retirement Income Planning</h3>
+            <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
+        </div>
+        <div class="service-box">
+            <h3>Life Insurance Strategy</h3>
+            <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
+        </div>
+        <div class="service-box">
+            <h3>Estate Coordination</h3>
+            <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
+        </div>
+        <div class="service-box">
+            <h3>Tax-Aware Strategy</h3>
+            <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
+        </div>
     </div>
 
-    <hr>
+    <div class="quote-block">
+        <p>“Good planning starts by helping people understand what matters, what is possible, and what each decision may mean over time.”</p>
+        <span class="quote-author">— Avi Crane</span>
+    </div>
 
-    <div class="section contact-form">
-        <h2>Start the Conversation</h2>
-        <p>If you are exploring retirement strategy, wealth preservation, estate planning coordination, or tax-aware financial decisions, let's connect.</p>
-        <p><strong>Email:</strong> crane_avi@aipfinancial.net</p>
+    <div class="contact-section">
+        <h2 style="border:none; margin-bottom: 10px;">Start the Conversation</h2>
+        <p style="margin-bottom: 25px;">If you are exploring retirement strategy, wealth preservation, estate planning coordination, or tax-aware financial decisions, request a consultation below.</p>
         
         <form id="leadForm">
-            <input type="text" name="FullName" placeholder="Full Name" required>
-            <input type="email" name="Email" placeholder="Email Address" required>
-            <input type="tel" name="CellPhone" placeholder="Phone Number">
+            <div class="form-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="email" name="Email" placeholder="Email Address" required></div>
+            <div class="form-group"><input type="tel" name="CellPhone" placeholder="Phone Number"></div>
             <button type="submit">Request a Consultation</button>
         </form>
-        <div id="formMessage" style="display:none; color:green; font-weight:bold; margin-top:15px; text-align:center;">
+        <div id="formMessage" style="display:none; color:#28a745; font-weight:bold; margin-top:15px; text-align:center;">
             Thank you! Avi will be in touch shortly.
         </div>
     </div>
 </div>
 
 <footer>
-    <div class="container">
-        <p><strong>Avi Crane · Financial Fiduciary · Investment Advisor Representative</strong></p>
-        <p>Securities offered through [Broker-Dealer Name, if applicable], Member FINRA/SIPC. Investment advisory services offered through Infinity Financial Services Advisory, a registered investment advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities.</p>
-        <p>Avi Crane is licensed to conduct business in [Insert States].</p>
+    <div class="footer-content">
+        <p style="text-align: center; font-weight: bold; color: #fff; margin-bottom: 20px;">Avi Crane · Financial Fiduciary · Investment Advisor Representative</p>
+        
+        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
+        
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities.</p>
     </div>
 </footer>
 
@@ -125,7 +159,7 @@
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
     
-    // IMPORTANT: Replace the URL below with your Google Apps Script Web App URL
+    // IMPORTANT: Paste your Google Apps Script URL here so your CRM connects
     fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
       method: "POST",
       body: data
