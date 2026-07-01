@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avi Crane | Alpha Innovation Partners</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        header { background-color: #f4f4f4; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #005b82; }
+        .logo { font-size: 24px; font-weight: bold; color: #005b82; }
+        .brokercheck { background-color: #d9534f; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .hero { background-color: #005b82; color: white; padding: 60px 20px; text-align: center; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        h1, h2, h3 { color: #005b82; }
+        .hero h1, .hero h2 { color: white; }
+        .section { margin-bottom: 40px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .service-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #005b82; }
+        .contact-form { background: #f4f4f4; padding: 30px; border-radius: 8px; }
+        input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #005b82; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; width: 100%; font-size: 16px; }
+        button:hover { background-color: #004360; }
+        footer { background-color: #222; color: #ccc; padding: 30px 20px; text-align: center; font-size: 12px; }
+        .quote { font-style: italic; font-size: 1.2em; border-left: 4px solid #005b82; padding-left: 15px; color: #555; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Alpha Innovation Partners</div> 
+    <a href="https://brokercheck.finra.org/" target="_blank" class="brokercheck">FINRA BrokerCheck</a>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <p>Los Angeles, California</p>
+        <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
+        <p>I’m Avi Crane, a Financial Fiduciary and Investment Advisor Representative focused on helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Professional Snapshot</h2>
+        <ul>
+            <li><strong>Current Role:</strong> Financial Fiduciary and Investment Advisor Representative</li>
+            <li><strong>Affiliations:</strong> Alpha Innovation Partners and Infinity Financial Services Advisory</li>
+            <li><strong>Focus Areas:</strong> Retirement planning, estate strategy, tax optimization, life insurance design</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Career Background & Approach</h2>
+        <p><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
+        <p><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
+        <p><strong>Who I Serve:</strong> I work with individuals, families, executives, and business owners who want thoughtful guidance around retirement income, wealth preservation, estate planning coordination, and tax-aware financial decision-making.</p>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Areas of Focus</h2>
+        <p>These are the planning conversations I most often help clients think through when they are seeking structure, clarity, and next-step direction.</p>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Retirement Income Planning</h3>
+                <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
+            </div>
+            <div class="service-box">
+                <h3>Life Insurance Strategy</h3>
+                <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
+            </div>
+            <div class="service-box">
+                <h3>Estate Coordination</h3>
+                <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
+            </div>
+            <div class="service-box">
+                <h3>Tax-Aware Strategy</h3>
+                <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <p class="quote">“Good planning starts by helping people understand what matters, what is possible, and what each decision may mean over time.” <br><strong>— Avi Crane</strong></p>
+    </div>
+
+    <hr>
+
+    <div class="section contact-form">
+        <h2>Start the Conversation</h2>
+        <p>If you are exploring retirement strategy, wealth preservation, estate planning coordination, or tax-aware financial decisions, let's connect.</p>
+        <p><strong>Email:</strong> crane_avi@aipfinancial.net</p>
+        
+        <form id="leadForm">
+            <input type="text" name="FullName" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <input type="tel" name="CellPhone" placeholder="Phone Number">
+            <button type="submit">Request a Consultation</button>
+        </form>
+        <div id="formMessage" style="display:none; color:green; font-weight:bold; margin-top:15px; text-align:center;">
+            Thank you! Avi will be in touch shortly.
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p><strong>Avi Crane · Financial Fiduciary · Investment Advisor Representative</strong></p>
+        <p>Securities offered through [Broker-Dealer Name, if applicable], Member FINRA/SIPC. Investment advisory services offered through Infinity Financial Services Advisory, a registered investment advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities.</p>
+        <p>Avi Crane is licensed to conduct business in [Insert States].</p>
+    </div>
+</footer>
+
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var form = this;
+    var data = new FormData(form);
+    var messageDiv = document.getElementById("formMessage");
+    var submitBtn = form.querySelector("button");
+    
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+    
+    // IMPORTANT: Replace the URL below with your Google Apps Script Web App URL
+    fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
+      method: "POST",
+      body: data
+    })
+    .then(response => response.text())
+    .then(result => {
+      form.reset();
+      form.style.display = "none"; 
+      messageDiv.style.display = "block";
+    })
+    .catch(error => {
+      submitBtn.innerText = "Error - Try Again";
+      submitBtn.disabled = false;
+    });
+  });
+</script>
+
+</body>
+</html>
