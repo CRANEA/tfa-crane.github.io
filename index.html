@@ -4,162 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi Crane | Alpha Innovation Partners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Modern CSS Reset & Elegant Typography */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.8; color: #4a4a4a; background-color: #ffffff; }
+        /* CSS Reset & FMG-Style Typography */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #444; line-height: 1.7; background-color: #fdfdfd; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; color: #003b5c; }
         
-        /* Top Utility Bar (Contact & Compliance) */
-        .top-bar { background-color: #003049; color: #ffffff; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: 1px; }
-        .top-bar a { color: #ffffff; text-decoration: none; font-weight: bold; }
-        .top-bar a:hover { text-decoration: underline; }
-        .brokercheck { background-color: #d62828; padding: 5px 15px; border-radius: 3px; text-transform: uppercase; font-size: 11px; }
+        /* Top Utility Bar */
+        .top-bar { background-color: #003b5c; color: #fff; padding: 12px 5%; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; letter-spacing: 0.5px; }
+        .top-bar .contact-info span { margin-right: 20px; }
+        .top-bar .creds { opacity: 0.85; font-size: 12px; }
+        .top-bar a { color: #fff; text-decoration: none; font-weight: 600; }
 
-        /* Main Header Layout */
-        header { background-color: #ffffff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
-        .header-logos { display: flex; align-items: center; gap: 30px; }
-        .header-logos img { height: 75px; width: auto; object-fit: contain; }
+        /* Main Navigation */
+        .navbar { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .logos { display: flex; align-items: center; gap: 30px; }
+        .logos img { height: 65px; width: auto; object-fit: contain; }
+        .nav-button { background: #009b9f; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; border-radius: 2px; }
+        .nav-button:hover { background: #007a7d; }
 
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(rgba(0, 48, 73, 0.85), rgba(0, 48, 73, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover; 
-            color: white; padding: 120px 5%; text-align: center; 
+        /* Full-Width Hero Image */
+        .hero {
+            background: linear-gradient(rgba(0, 35, 55, 0.75), rgba(0, 35, 55, 0.75)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover;
+            padding: 160px 5%;
+            text-align: center;
+            color: #fff;
         }
-        .hero h1 { font-size: 3em; margin-bottom: 20px; font-weight: 300; letter-spacing: 1px; color: #ffffff; }
-        .hero p.locations { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.85em; color: #fdf0d5; }
-        .hero p.subtitle { font-size: 1.3em; max-width: 800px; margin: 0 auto; font-weight: 300; line-height: 1.6; }
-
-        /* Main Content Container */
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 5%; }
-        h2 { color: #003049; font-size: 2.2em; margin-bottom: 25px; font-weight: 400; border-bottom: 1px solid #eaeaea; padding-bottom: 15px; }
+        .hero h1 { color: #fff; font-size: 3.8rem; margin-bottom: 25px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px; }
         
-        /* Two-Column Layout for Bio */
-        .bio-section { display: flex; flex-wrap: wrap; gap: 60px; margin-bottom: 80px; }
-        .bio-text { flex: 2; min-width: 300px; }
-        .bio-snapshot { flex: 1; min-width: 300px; background: #f8f9fa; padding: 35px; border-top: 5px solid #003049; }
-        .bio-snapshot h3 { color: #003049; margin-bottom: 20px; font-size: 1.4em; }
-        .bio-snapshot ul { list-style: none; }
-        .bio-snapshot li { margin-bottom: 15px; font-size: 0.95em; border-bottom: 1px solid #eaeaea; padding-bottom: 10px; }
-        .bio-snapshot li:last-child { border-bottom: none; }
+        /* Location Bar */
+        .locations { background: #f0f4f7; padding: 30px 5%; text-align: center; font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #e0e6ed; }
+        .locations strong { color: #003b5c; margin-right: 5px; }
+
+        /* Content Sections */
+        .section { padding: 90px 5%; max-width: 1250px; margin: auto; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: #009b9f; display: block; margin: 25px auto 0; }
+
+        /* Split Bio Layout */
+        .bio-grid { display: flex; flex-wrap: wrap; gap: 60px; }
+        .bio-text { flex: 2; min-width: 320px; font-size: 1.05rem; }
+        .bio-text p { margin-bottom: 25px; text-align: justify; }
+        .bio-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; align-self: flex-start; }
+        .bio-card h3 { margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .bio-card ul { list-style: none; }
+        .bio-card li { margin-bottom: 20px; font-size: 0.95rem; }
+        .bio-card li strong { color: #003b5c; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 
         /* Services Grid */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-bottom: 80px; }
-        .service-box { background: #ffffff; padding: 40px; border: 1px solid #eaeaea; border-top: 4px solid #003049; transition: all 0.3s ease; }
-        .service-box:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .service-box h3 { color: #003049; margin-bottom: 15px; font-size: 1.3em; font-weight: 500; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 35px; }
+        .service-item { background: #fff; padding: 50px 35px; text-align: center; border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; border-bottom: 4px solid transparent; }
+        .service-item:hover { transform: translateY(-10px); border-bottom: 4px solid #009b9f; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+        .service-item h3 { font-size: 1.4rem; margin-bottom: 20px; }
+        .service-item p { font-size: 0.95rem; color: #666; line-height: 1.6; }
 
-        /* Quote Section */
-        .quote-block { background: #003049; color: #ffffff; padding: 60px 5%; text-align: center; margin-bottom: 80px; }
-        .quote-block p { font-size: 1.8em; font-style: italic; font-weight: 300; max-width: 900px; margin: auto; }
-        .quote-author { display: block; margin-top: 20px; font-weight: bold; color: #fdf0d5; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9em; }
+        /* Quote Banner */
+        .quote { background: #003b5c; color: #fff; padding: 100px 5%; text-align: center; }
+        .quote p { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-style: italic; max-width: 900px; margin: auto; line-height: 1.4; color: #fff; }
+        .quote span { display: block; margin-top: 30px; font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; color: #009b9f; font-family: 'Open Sans', sans-serif; font-weight: 600; }
 
-        /* Contact Form */
-        .contact-section { background: #f8f9fa; padding: 60px 5%; margin-bottom: 80px; text-align: center; }
-        .contact-section p.contact-info { font-size: 1.2em; margin-bottom: 30px; font-weight: bold; color: #003049; }
-        .form-group { margin-bottom: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
-        input { width: 100%; padding: 15px; border: 1px solid #ccc; font-size: 16px; background-color: #ffffff; }
-        button { background-color: #003049; color: white; border: none; padding: 18px 40px; cursor: pointer; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; margin-top: 10px; }
-        button:hover { background-color: #001f30; }
+        /* FMG Style Form */
+        .form-container { background: #fff; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 800px; margin: auto; border-top: 5px solid #003b5c; }
+        .form-container p.contact-callout { text-align: center; margin-bottom: 40px; font-size: 1.2rem; color: #003b5c; font-weight: 600; }
+        .input-group { margin-bottom: 25px; }
+        input { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-family: 'Open Sans', sans-serif; font-size: 1rem; background: #fafafa; transition: border 0.3s; }
+        input:focus { outline: none; border-color: #009b9f; background: #fff; }
+        button { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; margin-top: 10px; }
+        button:hover { background: #00263c; }
 
-        /* Strict Footer / Legal */
-        footer { background-color: #111111; color: #777777; padding: 60px 5%; font-size: 0.8em; line-height: 1.8; }
-        .footer-content { max-width: 1200px; margin: auto; }
-        .footer-content p { margin-bottom: 20px; text-align: justify; }
+        /* Footer */
+        footer { background: #151515; color: #888; padding: 70px 5%; font-size: 0.85rem; }
+        footer .container { max-width: 1250px; margin: auto; }
+        footer p { margin-bottom: 25px; line-height: 1.8; text-align: justify; }
+        footer .footer-title { color: #e1e1e1; font-weight: 600; font-size: 1.1rem; text-align: center; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
 <div class="top-bar">
-    <div>Direct: <strong>949-346-1459</strong> &nbsp;|&nbsp; crane_avi@aipfinancial.net</div>
-    <a href="https://brokercheck.finra.org/" target="_blank" class="brokercheck">FINRA BrokerCheck</a>
+    <div class="contact-info">
+        <span><strong>Call:</strong> 949-346-1459</span>
+        <span><strong>Email:</strong> <a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a></span>
+    </div>
+    <div class="creds">
+        CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L54762
+    </div>
 </div>
 
-<header>
-    <div class="header-logos">
+<nav class="navbar">
+    <div class="logos">
         <img src="aip-logo.png" alt="Alpha Innovation Partners Logo">
         <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo">
     </div>
+    <a href="https://brokercheck.finra.org/" target="_blank" class="nav-button">FINRA BrokerCheck</a>
+</nav>
+
+<header class="hero">
+    <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
+    <p>Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
 </header>
 
-<div class="hero">
-    <p class="locations">
-        <strong>Infinity Financial Services</strong> &mdash; Oakland, CA <br><br>
-        <strong>Alpha Innovation Partners</strong> &mdash; San Francisco, CA &nbsp;|&nbsp; Irvine, CA
-    </p>
-    <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
-    <p class="subtitle">Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
+<div class="locations">
+    <strong>Infinity Financial Services:</strong> Oakland, CA &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Alpha Innovation Partners:</strong> San Francisco, CA &mdash; Irvine, CA
 </div>
 
-<div class="container">
-    <div class="bio-section">
+<section class="section">
+    <div class="bio-grid">
         <div class="bio-text">
             <h2>Career Background & Approach</h2>
-            <p style="margin-bottom: 20px;"><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
-            <p style="margin-bottom: 20px;"><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
+            <p><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
+            <p><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
             <p><strong>Who I Serve:</strong> I work with individuals, families, executives, and business owners who want thoughtful guidance around retirement income, wealth preservation, estate planning coordination, and tax-aware financial decision-making.</p>
         </div>
         
-        <div class="bio-snapshot">
+        <div class="bio-card">
             <h3>Professional Snapshot</h3>
             <ul>
-                <li><strong>Advisor:</strong> Avi Crane</li>
-                <li><strong>Role:</strong> Financial Fiduciary & IAR</li>
-                <li><strong>Phone:</strong> 949-346-1459</li>
-                <li><strong>Email:</strong> crane_avi@aipfinancial.net</li>
-                <li><strong>Affiliations:</strong> Alpha Innovation Partners & Infinity Financial Services Advisory</li>
+                <li><strong>Advisor</strong> Avi Crane</li>
+                <li><strong>Role</strong> Financial Fiduciary & IAR</li>
+                <li><strong>Direct Line</strong> 949-346-1459</li>
+                <li><strong>Email</strong> crane_avi@aipfinancial.net</li>
+                <li><strong>Credentials</strong> CRD# 6947883<br>NPR# 18309523<br>CDI# 0L54762</li>
+                <li><strong>Affiliations</strong> Alpha Innovation Partners<br>Infinity Financial Services Advisory</li>
             </ul>
         </div>
     </div>
+</section>
 
-    <h2>Areas of Focus</h2>
-    <p style="margin-bottom: 40px; font-size: 1.1em;">These are the planning conversations I most often help clients think through when they are seeking structure, clarity, and next-step direction.</p>
-    
-    <div class="services-grid">
-        <div class="service-box">
-            <h3>Retirement Income Planning</h3>
-            <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
-        </div>
-        <div class="service-box">
-            <h3>Life Insurance Strategy</h3>
-            <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
-        </div>
-        <div class="service-box">
-            <h3>Estate Coordination</h3>
-            <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
-        </div>
-        <div class="service-box">
-            <h3>Tax-Aware Strategy</h3>
-            <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
+<section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+    <div style="max-width: 1250px; margin: auto;">
+        <h2 class="section-title">Areas of Focus</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Retirement Income</h3>
+                <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
+            </div>
+            <div class="service-item">
+                <h3>Life Insurance Strategy</h3>
+                <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
+            </div>
+            <div class="service-item">
+                <h3>Estate Coordination</h3>
+                <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
+            </div>
+            <div class="service-item">
+                <h3>Tax-Aware Strategy</h3>
+                <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="quote-block">
+<div class="quote">
     <p>“Good planning starts by helping people understand what matters, what is possible, and what each decision may mean over time.”</p>
-    <span class="quote-author">— Avi Crane</span>
+    <span>— Avi Crane</span>
 </div>
 
-<div class="container">
-    <div class="contact-section">
-        <h2 style="border:none; text-align:center;">Start the Conversation</h2>
-        <p>If you are exploring retirement strategy, wealth preservation, estate planning coordination, or tax-aware financial decisions, let's connect.</p>
-        <p class="contact-info">Call 949-346-1459 or request a consultation below.</p>
-        
+<section class="section">
+    <h2 class="section-title">Start the Conversation</h2>
+    <div class="form-container">
+        <p class="contact-callout">Call 949-346-1459 or request a consultation below.</p>
         <form id="leadForm">
-            <div class="form-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
-            <div class="form-group"><input type="email" name="Email" placeholder="Email Address" required></div>
-            <div class="form-group"><input type="tel" name="CellPhone" placeholder="Phone Number"></div>
-            <button type="submit">Request a Consultation</button>
+            <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
+            <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
+            <div class="input-group"><input type="tel" name="CellPhone" placeholder="Phone Number"></div>
+            <button type="submit">Request Consultation</button>
         </form>
-        <div id="formMessage" style="display:none; color:#28a745; font-weight:bold; margin-top:20px;">
+        <div id="formMessage" style="display:none; color:#009b9f; font-weight:bold; margin-top:20px; text-align:center;">
             Thank you! Avi will be in touch shortly.
         </div>
     </div>
-</div>
+</section>
 
 <footer>
-    <div class="footer-content">
-        <p style="text-align: center; font-weight: bold; color: #dddddd; margin-bottom: 30px; font-size: 1.2em;">Avi Crane · Financial Fiduciary · Investment Advisor Representative</p>
+    <div class="container">
+        <div class="footer-title">Avi Crane · Financial Fiduciary · Investment Advisor Representative</div>
         
         <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
         
@@ -174,7 +198,6 @@
     var data = new FormData(form);
     var messageDiv = document.getElementById("formMessage");
     var submitBtn = form.querySelector("button");
-    
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
     
@@ -195,6 +218,5 @@
     });
   });
 </script>
-
 </body>
 </html>
