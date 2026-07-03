@@ -11,7 +11,7 @@
     <style>
         /* CSS Reset & Typography */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: #444; line-height: 1.7; background-color: #fdfdfd; }
+        body { font-family: 'Open Sans', sans-serif; color: #444; line-height: 1.7; background-color: #fdfdfd; scroll-behavior: smooth; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; color: #003b5c; }
         
         /* Top Utility Bar */
@@ -51,13 +51,13 @@
         .diff-card li { margin-bottom: 20px; font-size: 0.95rem; }
         .diff-card li strong { color: #003b5c; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 
-        /* Six Pillars Grid */
-        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 35px; }
-        .pillar-card { background: #fff; padding: 40px; border: 1px solid #f0f0f0; border-top: 4px solid #003b5c; transition: transform 0.3s; }
-        .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-        .pillar-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #003b5c; }
-        .pillar-card ul { margin-top: 15px; padding-left: 20px; font-size: 0.9rem; color: #666; }
-        .pillar-card li { margin-bottom: 8px; }
+        /* Who We Work With Grid */
+        .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 40px; }
+        .client-card { background: #fff; padding: 40px 30px; text-align: center; border: 1px solid #eaeaea; border-radius: 4px; transition: box-shadow 0.3s; }
+        .client-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .client-icon { width: 50px; height: 50px; background: #f0f4f7; color: #003b5c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; font-size: 1.2rem; }
+        .client-card h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 15px; color: #003b5c; }
+        .client-card p { font-size: 0.9rem; color: #666; line-height: 1.6; }
 
         /* Contact Form */
         .form-container { background: #fff; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 800px; margin: auto; border-top: 5px solid #003b5c; }
@@ -70,6 +70,15 @@
         footer { background: #111; color: #777; padding: 70px 5%; font-size: 0.8rem; }
         footer .container { max-width: 1250px; margin: auto; }
         footer p { margin-bottom: 20px; line-height: 1.8; text-align: justify; }
+
+        /* Mock Chat Widget */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; cursor: pointer; z-index: 9999; max-width: 250px; transition: transform 0.3s; border: 1px solid #eaeaea; }
+        .chat-widget:hover { transform: translateY(-5px); }
+        .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
+        .chat-heads img { width: 55px; height: 55px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
+        .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
+        .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
+        .close-chat:hover { color: #333; }
     </style>
 </head>
 <body>
@@ -79,7 +88,7 @@
         <span><strong>Call:</strong> 949-346-1459</span>
         <span><strong>Email:</strong> <a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a></span>
     </div>
-    <div class="creds">CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L54762</div>
+    <div class="creds">CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L53762</div>
 </div>
 
 <nav class="navbar">
@@ -113,11 +122,11 @@
             <h3>Professional Snapshot</h3>
             <ul>
                 <li><strong>Advisor:</strong> Avi Crane</li>
-                <li><strong>Role:</strong> Financial Fiduciary & IAR</li>
-                <li><strong>Securities Licenses:</strong> CRD# 6947883</li>
-                <li><strong>Primary Affiliation:</strong> Infinity Financial Services Advisory</li>
-                <li><strong>Partner Network:</strong> Alpha Innovation Partners</li>
+                <li><strong>Designation:</strong> Financial Fiduciary & Investment Advisor Representative</li>
                 <li><strong>Direct Line:</strong> 949-346-1459</li>
+                <li><strong>Email:</strong> crane_avi@aipfinancial.net</li>
+                <li><strong>Credentials:</strong> CRD# 6947883<br>NPR# 18309523<br>CDI# 0L53762</li>
+                <li><strong>Affiliations:</strong> Alpha Innovation Partners<br>Infinity Financial Services Advisory</li>
             </ul>
         </div>
     </div>
@@ -125,58 +134,34 @@
 
 <section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
     <div style="max-width: 1250px; margin: auto;">
-        <h2 class="section-title">The Six Pillars of Fiduciary Planning</h2>
-        <p class="section-subtitle">Unlike a product-focused approach, our licensing allows us to coordinate every aspect of your financial life into one seamless strategy.</p>
+        <h2 class="section-title">Who We Work With</h2>
+        <p class="section-subtitle">Our planning is designed for individuals navigating increasing financial complexity. Each group faces different challenges. Our strategies are built accordingly.</p>
         
-        <div class="pillars">
-            <div class="pillar-card">
-                <h3>Wealth Accumulation</h3>
-                <p>Institutional-grade investment strategies aligned with your risk tolerance and objectives, entirely fee-transparent and legally bound to your best interest.</p>
+        <div class="client-grid">
+            <div class="client-card">
+                <div class="client-icon">💼</div>
+                <h4>Senior Professionals & Executives</h4>
+                <p>Balancing income growth, equity compensation, and tax exposure.</p>
             </div>
-            <div class="pillar-card">
-                <h3>Retirement Planning</h3>
-                <p>Sophisticated strategies for accumulation, distribution, and income optimization.</p>
-                <ul>
-                    <li>Solo 401(k), 403(b) & 457 Plans</li>
-                    <li>Defined Benefit & Profit Sharing</li>
-                    <li>SEP & Simple IRAs</li>
-                </ul>
+            <div class="client-card" style="border-left: 3px solid #b59a5d;"> <div class="client-icon">🏢</div>
+                <h4>Business Owners</h4>
+                <p>Coordinating cash flow, taxes, and long-term planning from variable income.</p>
             </div>
-            <div class="pillar-card">
-                <h3>Risk Management</h3>
-                <p>Comprehensive insurance analysis protecting against uncertainties while avoiding over-insurance.</p>
-                <ul>
-                    <li>Life & Disability Insurance</li>
-                    <li>Fixed Index & Guaranteed Annuities</li>
-                </ul>
+            <div class="client-card">
+                <div class="client-icon">🕒</div>
+                <h4>Pre-Retirees<br>(5-10 Years Out)</h4>
+                <p>Protecting what you've built while planning reliable income.</p>
             </div>
-            <div class="pillar-card">
-                <h3>Business Planning</h3>
-                <p>Specialized guidance on succession, exit strategies, and comprehensive benefits.</p>
-                <ul>
-                    <li>Employee Retention Planning</li>
-                    <li>Executive Carveouts</li>
-                    <li>Key Person & Buy-Sell Agreements</li>
-                </ul>
-            </div>
-            <div class="pillar-card">
-                <h3>Estate Planning</h3>
-                <p>Coordinated strategies alongside your legal counsel to transfer wealth efficiently and preserve your legacy for future generations.</p>
-            </div>
-            <div class="pillar-card">
-                <h3>Advanced Tax Planning</h3>
-                <p>Strategic approaches designed to minimize lifetime tax liability.</p>
-                <ul>
-                    <li>Premium Finance</li>
-                    <li>Charitable Giving</li>
-                    <li>Structured Installment Sales</li>
-                </ul>
+            <div class="client-card">
+                <div class="client-icon">👥</div>
+                <h4>Families & High-Income Individuals</h4>
+                <p>Aligning protection, growth, and legacy across household priorities.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section">
+<section id="contact-section" class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
         <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #003b5c; font-weight: 600;">Call 949-346-1459 or request a consultation below.</p>
@@ -195,37 +180,4 @@
 <footer>
     <div class="container">
         <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
-        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
-        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
-    </div>
-</footer>
-
-<script>
-  document.getElementById("leadForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var form = this;
-    var data = new FormData(form);
-    var messageDiv = document.getElementById("formMessage");
-    var submitBtn = form.querySelector("button");
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
-    
-    // Paste your Google Apps Script URL here so your CRM connects
-    fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
-      method: "POST",
-      body: data
-    })
-    .then(response => response.text())
-    .then(result => {
-      form.reset();
-      form.style.display = "none"; 
-      messageDiv.style.display = "block";
-    })
-    .catch(error => {
-      submitBtn.innerText = "Error - Try Again";
-      submitBtn.disabled = false;
-    });
-  });
-</script>
-</body>
-</html>
+        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information.
