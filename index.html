@@ -238,7 +238,7 @@
 <section id="contact-section" class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
-        <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #003b5c; font-weight: 600;">Call 949-346-1459 or request a consultation below.</p>
+        
         <form id="leadForm">
             <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
             <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
@@ -271,26 +271,36 @@
   document.getElementById("leadForm").addEventListener("submit", function(e){
     e.preventDefault();
     var form = this;
-    var data = new FormData(form);
     var messageDiv = document.getElementById("formMessage");
     var submitBtn = form.querySelector("button");
+    
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
     
-    // Paste your Google Apps Script URL here so your CRM connects
-    fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
-      method: "POST",
-      body: data
+    // Sends the data securely to your email and CC's your phone via text message
+    fetch("https://formsubmit.co/ajax/crane_avi@aipfinancial.net", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Name: form.FullName.value,
+            Email: form.Email.value,
+            Phone: form.CellPhone.value,
+            _subject: "New Website Lead!",
+            _cc: "9494452323@vtext.com"
+        })
     })
-    .then(response => response.text())
-    .then(result => {
-      form.reset();
-      form.style.display = "none"; 
-      messageDiv.style.display = "block";
+    .then(response => response.json())
+    .then(data => {
+        form.reset();
+        form.style.display = "none"; 
+        messageDiv.style.display = "block";
     })
     .catch(error => {
-      submitBtn.innerText = "Error - Try Again";
-      submitBtn.disabled = false;
+        submitBtn.innerText = "Error - Try Again";
+        submitBtn.disabled = false;
     });
   });
 </script>
