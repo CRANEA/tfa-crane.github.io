@@ -9,79 +9,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset & FMG-Style Typography */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: #444; line-height: 1.7; background-color: #fdfdfd; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.7; background-color: #fafcfc; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; color: #003b5c; }
         
-        /* Top Utility Bar */
+        /* Top Bar & Nav */
         .top-bar { background-color: #003b5c; color: #fff; padding: 12px 5%; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; letter-spacing: 0.5px; }
         .top-bar .contact-info span { margin-right: 20px; }
         .top-bar .creds { opacity: 0.85; font-size: 12px; }
         .top-bar a { color: #fff; text-decoration: none; font-weight: 600; }
-
-        /* Main Navigation */
         .navbar { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .logos { display: flex; align-items: center; gap: 30px; }
         .logos img { height: 65px; width: auto; object-fit: contain; }
-        .nav-button { background: #009b9f; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; border-radius: 2px; }
-        .nav-button:hover { background: #007a7d; }
+        .nav-button { background: #009b9f; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; }
 
-        /* Full-Width Hero Image */
-        .hero {
-            background: linear-gradient(rgba(0, 35, 55, 0.75), rgba(0, 35, 55, 0.75)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover;
-            padding: 160px 5%;
-            text-align: center;
-            color: #fff;
-        }
-        .hero h1 { color: #fff; font-size: 3.8rem; margin-bottom: 25px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px; }
+        /* Hero */
+        .hero { background: linear-gradient(rgba(0, 35, 55, 0.8), rgba(0, 35, 55, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover; padding: 140px 5%; text-align: center; color: #fff; }
+        .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 25px; line-height: 1.2; max-width: 900px; margin: auto; }
+        .hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; }
+        .locations { background: #f0f4f7; padding: 25px 5%; text-align: center; font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #e0e6ed; }
         
-        /* Location Bar */
-        .locations { background: #f0f4f7; padding: 30px 5%; text-align: center; font-size: 13px; color: #555; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #e0e6ed; }
-        .locations strong { color: #003b5c; margin-right: 5px; }
-
-        /* Content Sections */
+        /* Layout Utilities */
         .section { padding: 90px 5%; max-width: 1250px; margin: auto; }
-        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: #009b9f; display: block; margin: 25px auto 0; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 20px; }
+        .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        /* Fit / Not a Fit Grid */
+        .fit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; }
+        .fit-box { background: #fff; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid #009b9f; }
+        .fit-box.not-fit { border-top-color: #d62828; }
+        .fit-box ul { list-style: none; margin-top: 20px; }
+        .fit-box li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .fit-box li::before { content: '✓'; color: #009b9f; font-weight: bold; position: absolute; left: 0; }
+        .not-fit li::before { content: '✕'; color: #d62828; }
 
-        /* Split Bio Layout */
-        .bio-grid { display: flex; flex-wrap: wrap; gap: 60px; }
-        .bio-text { flex: 2; min-width: 320px; font-size: 1.05rem; }
-        .bio-text p { margin-bottom: 25px; text-align: justify; }
-        .bio-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; align-self: flex-start; }
-        .bio-card h3 { margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .bio-card ul { list-style: none; }
-        .bio-card li { margin-bottom: 20px; font-size: 0.95rem; }
-        .bio-card li strong { color: #003b5c; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        /* Process Grid */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
+        .process-step { padding: 30px; }
+        .step-num { width: 50px; height: 50px; background: #003b5c; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-family: 'Playfair Display'; margin: 0 auto 20px auto; }
+        
+        /* Videos Grid */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .video-card { background: #fff; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .video-card video { width: 100%; border-radius: 4px; margin-bottom: 15px; }
+        .video-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 
-        /* Services Grid */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 35px; }
-        .service-item { background: #fff; padding: 50px 35px; text-align: center; border: 1px solid #f0f0f0; transition: transform 0.3s, box-shadow 0.3s; border-bottom: 4px solid transparent; }
-        .service-item:hover { transform: translateY(-10px); border-bottom: 4px solid #009b9f; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
-        .service-item h3 { font-size: 1.4rem; margin-bottom: 20px; }
-        .service-item p { font-size: 0.95rem; color: #666; line-height: 1.6; }
+        /* Resources Grid */
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .resource-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 4px; }
+        .resource-box h3 { color: #009b9f; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .resource-box a { color: #fff; text-decoration: none; display: block; margin-bottom: 15px; padding-left: 20px; position: relative; transition: color 0.3s; }
+        .resource-box a::before { content: '→'; position: absolute; left: 0; color: #009b9f; }
+        .resource-box a:hover { color: #009b9f; }
 
-        /* Quote Banner */
-        .quote { background: #003b5c; color: #fff; padding: 100px 5%; text-align: center; }
-        .quote p { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-style: italic; max-width: 900px; margin: auto; line-height: 1.4; color: #fff; }
-        .quote span { display: block; margin-top: 30px; font-size: 1rem; text-transform: uppercase; letter-spacing: 3px; color: #009b9f; font-family: 'Open Sans', sans-serif; font-weight: 600; }
-
-        /* FMG Style Form */
+        /* Contact Form */
         .form-container { background: #fff; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 800px; margin: auto; border-top: 5px solid #003b5c; }
-        .form-container p.contact-callout { text-align: center; margin-bottom: 40px; font-size: 1.2rem; color: #003b5c; font-weight: 600; }
         .input-group { margin-bottom: 25px; }
-        input { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-family: 'Open Sans', sans-serif; font-size: 1rem; background: #fafafa; transition: border 0.3s; }
-        input:focus { outline: none; border-color: #009b9f; background: #fff; }
-        button { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; margin-top: 10px; }
+        input { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-size: 1rem; background: #fafafa; }
+        button { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; }
         button:hover { background: #00263c; }
 
-        /* Footer */
-        footer { background: #151515; color: #888; padding: 70px 5%; font-size: 0.85rem; }
+        footer { background: #111; color: #777; padding: 70px 5%; font-size: 0.8rem; line-height: 1.8; text-align: justify; }
         footer .container { max-width: 1250px; margin: auto; }
-        footer p { margin-bottom: 25px; line-height: 1.8; text-align: justify; }
-        footer .footer-title { color: #e1e1e1; font-weight: 600; font-size: 1.1rem; text-align: center; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -91,22 +80,20 @@
         <span><strong>Call:</strong> 949-346-1459</span>
         <span><strong>Email:</strong> <a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a></span>
     </div>
-    <div class="creds">
-        CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L54762
-    </div>
+    <div class="creds">CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L54762</div>
 </div>
 
 <nav class="navbar">
     <div class="logos">
-        <img src="aip-logo.png" alt="Alpha Innovation Partners Logo">
-        <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo">
+        <img src="aip-logo.png" alt="Alpha Innovation Partners">
+        <img src="infinity-logo.jpg" alt="Infinity Financial Services">
     </div>
     <a href="https://brokercheck.finra.org/" target="_blank" class="nav-button">FINRA BrokerCheck</a>
 </nav>
 
 <header class="hero">
-    <h1>Fiduciary guidance built on strategy, clarity, and trust.</h1>
-    <p>Helping individuals, families, and business owners make smarter decisions around retirement, wealth preservation, estate coordination, and tax-aware planning.</p>
+    <h1>Financial decisions get expensive when they are made without a plan.</h1>
+    <p>Fiduciary guidance built on strategy, clarity, and trust for individuals, families, and business owners.</p>
 </header>
 
 <div class="locations">
@@ -114,61 +101,119 @@
 </div>
 
 <section class="section">
-    <div class="bio-grid">
-        <div class="bio-text">
-            <h2>Career Background & Approach</h2>
-            <p><strong>My Approach:</strong> My work has centered on giving clients a more informed, structured way to evaluate important financial decisions. I approach planning as an educational process first, helping people understand their options, the tradeoffs involved, and the long-term impact of each strategy.</p>
-            <p><strong>How I Work:</strong> I believe financial advice should be understandable, personalized, and aligned with a client’s broader objectives rather than driven by one-size-fits-all recommendations. My role is to bring fiduciary discipline, clear communication, and practical structure to complex planning conversations.</p>
-            <p><strong>Who I Serve:</strong> I work with individuals, families, executives, and business owners who want thoughtful guidance around retirement income, wealth preservation, estate planning coordination, and tax-aware financial decision-making.</p>
-        </div>
-        
-        <div class="bio-card">
-            <h3>Professional Snapshot</h3>
+    <h2 class="section-title">Who We Serve</h2>
+    <p class="section-subtitle">We believe in transparent, mutually beneficial partnerships. Our practice is built for clients who seek structure and long-term strategy.</p>
+    
+    <div class="fit-grid">
+        <div class="fit-box">
+            <h3>We Are a Fit If You:</h3>
             <ul>
-                <li><strong>Advisor</strong> Avi Crane</li>
-                <li><strong>Role</strong> Financial Fiduciary & IAR</li>
-                <li><strong>Direct Line</strong> 949-346-1459</li>
-                <li><strong>Email</strong> crane_avi@aipfinancial.net</li>
-                <li><strong>Credentials</strong> CRD# 6947883<br>NPR# 18309523<br>CDI# 0L54762</li>
-                <li><strong>Affiliations</strong> Alpha Innovation Partners<br>Infinity Financial Services Advisory</li>
+                <li>Are navigating complex financial or transitional decisions.</li>
+                <li>Value an ongoing, strategic advisory relationship over time.</li>
+                <li>Seek comprehensive planning (tax, estate, and risk management).</li>
+                <li>Prioritize fiduciary duty and transparent fee structures.</li>
+            </ul>
+        </div>
+        <div class="fit-box not-fit">
+            <h3>We Are Not a Fit If You:</h3>
+            <ul>
+                <li>Are looking for quick, one-time transactional advice.</li>
+                <li>Prefer a completely self-directed investment approach.</li>
+                <li>Want product-first sales pitches over holistic strategy.</li>
+                <li>Are seeking to "beat the market" with day-trading tactics.</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+<section class="section" style="background-color: #f0f4f7; max-width: 100%;">
     <div style="max-width: 1250px; margin: auto;">
-        <h2 class="section-title">Areas of Focus</h2>
-        <div class="services">
-            <div class="service-item">
-                <h3>Retirement Income</h3>
-                <p>Helping clients assess readiness, identify income gaps, and evaluate sustainable withdrawal or accumulation strategies.</p>
+        <h2 class="section-title">Video Insights & Education</h2>
+        <p class="section-subtitle">Explore our visual masterclasses designed to demystify complex financial concepts and explain the rules of the wealth management game.</p>
+        
+        <div class="video-grid">
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="Demystifying_Wealth_Management.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Demystifying Wealth Management</h3>
+                <p style="font-size:0.9rem; color:#666;">A breakdown of how true fiduciary planning goes beyond standard investing.</p>
             </div>
-            <div class="service-item">
-                <h3>Life Insurance Strategy</h3>
-                <p>Thoughtful policy design conversations for protection, wealth transfer, liquidity, and long-term planning efficiency.</p>
+            
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="FiduciaryArchAC.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>The Fiduciary Architecture</h3>
+                <p style="font-size:0.9rem; color:#666;">Understanding the structural differences that protect your net worth.</p>
             </div>
-            <div class="service-item">
-                <h3>Estate Coordination</h3>
-                <p>Planning around trusts, legacy objectives, charitable intent, and intergenerational transfer considerations.</p>
-            </div>
-            <div class="service-item">
-                <h3>Tax-Aware Strategy</h3>
-                <p>Evaluating planning ideas through the lens of capital efficiency, timing, and long-term after-tax outcomes.</p>
+            
+            <div class="video-card">
+                <video controls preload="metadata">
+                    <source src="How_Money_Works.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>How Money Works</h3>
+                <p style="font-size:0.9rem; color:#666;">Understanding the underlying rules of the financial game.</p>
             </div>
         </div>
     </div>
 </section>
 
-<div class="quote">
-    <p>“Good planning starts by helping people understand what matters, what is possible, and what each decision may mean over time.”</p>
-    <span>— Avi Crane</span>
-</div>
+<section class="section">
+    <h2 class="section-title">Our 4-Step Process</h2>
+    <p class="section-subtitle">A structured, educational approach to organizing your financial life.</p>
+    
+    <div class="process-grid">
+        <div class="process-step">
+            <div class="step-num">1</div>
+            <h3>Discovery</h3>
+            <p style="font-size:0.9rem; color:#666;">We start by understanding your goals, fears, priorities, and timeline.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-num">2</div>
+            <h3>Strategy Design</h3>
+            <p style="font-size:0.9rem; color:#666;">Mapping out tailored options and clearly explaining the trade-offs of each.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-num">3</div>
+            <h3>Implementation</h3>
+            <p style="font-size:0.9rem; color:#666;">Coordinating the execution of your plan alongside your CPA or attorney.</p>
+        </div>
+        <div class="process-step">
+            <div class="step-num">4</div>
+            <h3>Ongoing Support</h3>
+            <p style="font-size:0.9rem; color:#666;">Actively monitoring and adjusting your plan as your life and markets evolve.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: #00263c; color: #fff; max-width: 100%;">
+    <div style="max-width: 1250px; margin: auto;">
+        <h2 class="section-title" style="color: #fff;">Downloadable Strategy Guides</h2>
+        
+        <div class="resources-grid">
+            <div class="resource-box">
+                <h3>PDF Strategy Guides</h3>
+                <a href="Fiduciary-Standard-SEC-RIA.pdf" target="_blank">The SEC Fiduciary Standard</a>
+                <a href="Fiduciary-Partner-for-Client-Success.pdf" target="_blank">Professional Fiduciary Partnership Guide</a>
+            </div>
+            <div class="resource-box">
+                <h3>Visual Frameworks</h3>
+                <a href="CraneApproach.png" target="_blank">Wealth Management with a Human Pulse</a>
+                <a href="Fiduciary-Standard.png" target="_blank">Why Your Wealth Deserves a Specialist</a>
+                <a href="What-We-Do.jpeg" target="_blank">Our Comprehensive Service Matrix</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
-        <p class="contact-callout">Call 949-346-1459 or request a consultation below.</p>
+        <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #003b5c; font-weight: 600;">Call 949-346-1459 or request a consultation below.</p>
         <form id="leadForm">
             <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
             <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
@@ -183,11 +228,9 @@
 
 <footer>
     <div class="container">
-        <div class="footer-title">Avi Crane · Financial Fiduciary · Investment Advisor Representative</div>
-        
+        <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · Investment Advisor Representative</p>
         <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
-        
-        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities.</p>
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
     </div>
 </footer>
 
@@ -201,7 +244,7 @@
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
     
-    // IMPORTANT: Paste your Google Apps Script URL here so your CRM connects
+    // Paste your Google Apps Script URL here so your CRM connects
     fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
       method: "POST",
       body: data
