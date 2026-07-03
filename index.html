@@ -239,15 +239,19 @@
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
         
-        <form id="leadForm">
+        <form action="https://formsubmit.co/crane_avi@aipfinancial.net" method="POST">
+            <input type="hidden" name="_subject" value="New Website Lead!">
+            <input type="hidden" name="_cc" value="9494452323@vtext.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://cranea.github.io/tfa-crane.github.io/">
+
             <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
             <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
-            <div class="input-group"><input type="tel" name="CellPhone" placeholder="Phone Number"></div>
+            <div class="input-group"><input type="tel" name="Phone" placeholder="Phone Number"></div>
+            
             <button type="submit">Request Consultation</button>
         </form>
-        <div id="formMessage" style="display:none; color:#009b9f; font-weight:bold; margin-top:20px; text-align:center;">
-            Thank you! Avi will be in touch shortly.
-        </div>
+
     </div>
 </section>
 
@@ -267,42 +271,5 @@
     <div class="chat-text">Got any questions? We're happy to help.</div>
 </div>
 
-<script>
-  document.getElementById("leadForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var form = this;
-    var messageDiv = document.getElementById("formMessage");
-    var submitBtn = form.querySelector("button");
-    
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
-    
-    // Sends the data securely to your email and CC's your phone via text message
-    fetch("https://formsubmit.co/ajax/crane_avi@aipfinancial.net", {
-        method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            Name: form.FullName.value,
-            Email: form.Email.value,
-            Phone: form.CellPhone.value,
-            _subject: "New Website Lead!",
-            _cc: "9494452323@vtext.com"
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        form.reset();
-        form.style.display = "none"; 
-        messageDiv.style.display = "block";
-    })
-    .catch(error => {
-        submitBtn.innerText = "Error - Try Again";
-        submitBtn.disabled = false;
-    });
-  });
-</script>
 </body>
 </html>
