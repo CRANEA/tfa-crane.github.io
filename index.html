@@ -43,13 +43,25 @@
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
         /* Differentiator Section */
-        .diff-grid { display: flex; flex-wrap: wrap; gap: 60px; margin-bottom: 60px; }
+        .diff-grid { display: flex; flex-wrap: wrap; gap: 60px; margin-bottom: 40px; }
         .diff-text { flex: 2; min-width: 320px; font-size: 1.05rem; }
         .diff-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; align-self: flex-start; }
         .diff-card h3 { margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .diff-card ul { list-style: none; }
         .diff-card li { margin-bottom: 20px; font-size: 0.95rem; }
         .diff-card li strong { color: #003b5c; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+
+        /* The Financial Decisions Grid */
+        .decisions-header { font-size: 0.9rem; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; border-bottom: 1px solid #eaeaea; padding-bottom: 10px; }
+        .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .decision-card { background: #fff; padding: 40px; border: 1px solid #eaeaea; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .decision-header-flex { display: flex; align-items: center; margin-bottom: 20px; }
+        .decision-icon { width: 50px; height: 50px; background: #f0f4f7; color: #003b5c; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 20px; }
+        .decision-card h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #003b5c; margin: 0; }
+        .decision-card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; }
+        .decision-card ul { list-style: none; padding: 0; }
+        .decision-card li { font-size: 0.9rem; color: #666; margin-bottom: 10px; position: relative; padding-left: 15px; }
+        .decision-card li::before { content: '•'; color: #009b9f; position: absolute; left: 0; font-weight: bold; }
 
         /* Who We Work With Grid */
         .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 40px; }
@@ -71,7 +83,7 @@
         footer .container { max-width: 1250px; margin: auto; }
         footer p { margin-bottom: 20px; line-height: 1.8; text-align: justify; }
 
-        /* Mock Chat Widget */
+        /* Chat Widget */
         .chat-widget { position: fixed; bottom: 30px; right: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; cursor: pointer; z-index: 9999; max-width: 250px; transition: transform 0.3s; border: 1px solid #eaeaea; }
         .chat-widget:hover { transform: translateY(-5px); }
         .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
@@ -96,7 +108,7 @@
         <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo" style="height: 75px;">
         <img src="aip-logo.png" alt="Alpha Innovation Partners Logo" style="height: 55px; opacity: 0.8;">
     </div>
-    <a href="https://brokercheck.finra.org/" target="_blank" class="nav-button">FINRA BrokerCheck</a>
+    <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
 </nav>
 
 <header class="hero">
@@ -134,91 +146,17 @@
 
 <section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
     <div style="max-width: 1250px; margin: auto;">
-        <h2 class="section-title">Who We Work With</h2>
-        <p class="section-subtitle">Our planning is designed for individuals navigating increasing financial complexity. Each group faces different challenges. Our strategies are built accordingly.</p>
+        <h2 class="section-title" style="margin-bottom: 50px;">The Financial Decisions We Help You Make</h2>
         
-        <div class="client-grid">
-            <div class="client-card">
-                <div class="client-icon">💼</div>
-                <h4>Senior Professionals & Executives</h4>
-                <p>Balancing income growth, equity compensation, and tax exposure.</p>
-            </div>
-            <div class="client-card" style="border-left: 3px solid #b59a5d;"> <div class="client-icon">🏢</div>
-                <h4>Business Owners</h4>
-                <p>Coordinating cash flow, taxes, and long-term planning from variable income.</p>
-            </div>
-            <div class="client-card">
-                <div class="client-icon">🕒</div>
-                <h4>Pre-Retirees<br>(5-10 Years Out)</h4>
-                <p>Protecting what you've built while planning reliable income.</p>
-            </div>
-            <div class="client-card">
-                <div class="client-icon">👥</div>
-                <h4>Families & High-Income Individuals</h4>
-                <p>Aligning protection, growth, and legacy across household priorities.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact-section" class="section">
-    <h2 class="section-title">Start the Conversation</h2>
-    <div class="form-container">
-        <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #003b5c; font-weight: 600;">Call 949-346-1459 or request a consultation below.</p>
-        <form id="leadForm">
-            <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
-            <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
-            <div class="input-group"><input type="tel" name="CellPhone" placeholder="Phone Number"></div>
-            <button type="submit">Request Consultation</button>
-        </form>
-        <div id="formMessage" style="display:none; color:#009b9f; font-weight:bold; margin-top:20px; text-align:center;">
-            Thank you! Avi will be in touch shortly.
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
-        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
-        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
-    </div>
-</footer>
-
-<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
-    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
-    <div class="chat-heads">
-        <img src="avi-photo.jpg" alt="Avi Crane">
-    </div>
-    <div class="chat-text">Got any questions? We're happy to help.</div>
-</div>
-
-<script>
-  document.getElementById("leadForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var form = this;
-    var data = new FormData(form);
-    var messageDiv = document.getElementById("formMessage");
-    var submitBtn = form.querySelector("button");
-    submitBtn.innerText = "Sending...";
-    submitBtn.disabled = true;
-    
-    // Paste your Google Apps Script URL here so your CRM connects
-    fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
-      method: "POST",
-      body: data
-    })
-    .then(response => response.text())
-    .then(result => {
-      form.reset();
-      form.style.display = "none"; 
-      messageDiv.style.display = "block";
-    })
-    .catch(error => {
-      submitBtn.innerText = "Error - Try Again";
-      submitBtn.disabled = false;
-    });
-  });
-</script>
-</body>
-</html>
+        <div class="decisions-header">During Your Working Years</div>
+        <div class="decision-grid">
+            <div class="decision-card">
+                <div class="decision-header-flex">
+                    <div class="decision-icon">🛡️</div>
+                    <h4>How Much Risk Can Your Plan Actually Absorb?</h4>
+                </div>
+                <p>We help structure insurance so risks are covered without excess or gaps.</p>
+                <ul>
+                    <li>Life insurance strategies</li>
+                    <li>Disability & income protection</li>
+                    <li>Long-term
