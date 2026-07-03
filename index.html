@@ -180,4 +180,45 @@
 <footer>
     <div class="container">
         <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
-        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information.
+        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
+    </div>
+</footer>
+
+<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
+    <div class="chat-heads">
+        <img src="avi-photo.jpg" alt="Avi Crane">
+    </div>
+    <div class="chat-text">Got any questions? We're happy to help.</div>
+</div>
+
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var form = this;
+    var data = new FormData(form);
+    var messageDiv = document.getElementById("formMessage");
+    var submitBtn = form.querySelector("button");
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+    
+    // Paste your Google Apps Script URL here so your CRM connects
+    fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
+      method: "POST",
+      body: data
+    })
+    .then(response => response.text())
+    .then(result => {
+      form.reset();
+      form.style.display = "none"; 
+      messageDiv.style.display = "block";
+    })
+    .catch(error => {
+      submitBtn.innerText = "Error - Try Again";
+      submitBtn.disabled = false;
+    });
+  });
+</script>
+</body>
+</html>
