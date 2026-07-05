@@ -27,7 +27,7 @@
         .nav-buttons { display: flex; gap: 15px; }
         .nav-button { background: #009b9f; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; border-radius: 2px; }
         .nav-button:hover { background: #007a7d; }
-        .nav-button.outline { background: transparent; color: #003b5c; border: 2px solid #003b5c; }
+        .nav-button.outline { background: transparent; color: #003b5c; border: 2px solid #003b5c; cursor: pointer; }
         .nav-button.outline:hover { background: #003b5c; color: #fff; }
 
         /* REDESIGNED Hero Section */
@@ -161,7 +161,7 @@
         <img src="aip-logo.png" alt="Alpha Innovation Partners Logo" style="height: 55px; opacity: 0.8;">
     </div>
     <div class="nav-buttons">
-        <a onclick="openModal('recruitingModal')" class="nav-button outline" style="cursor: pointer;">Join Our Firm</a>
+        <a href="javascript:void(0);" onclick="openModal('recruitingModal')" class="nav-button outline">Join Our Firm</a>
         <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
     </div>
 </nav>
@@ -355,4 +355,125 @@
     <div class="container">
         <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
         <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
-        <p
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
+    </div>
+</footer>
+
+<div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
+        <h2>Join Our Firm</h2>
+        <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/bUX__dx4ijg" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('recruitingModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Submit a Confidential Inquiry</button>
+    </div>
+</div>
+
+<div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
+        <h2>For CPAs & Tax Professionals</h2>
+        <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
+        <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
+        <ul>
+            <li><strong>Collaborative Planning:</strong> Coordinated tax harvesting, Roth conversions, and estate transitions.</li>
+            <li><strong>Fiduciary Standard:</strong> As an SEC Registered IAR, we are held to the same high ethical standards as you.</li>
+            <li><strong>Value Add:</strong> Provide your clients with specialized resources without increasing your overhead.</li>
+        </ul>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
+        <h2>Professional Alliance Program</h2>
+        <p>Welcome to our exclusive program for specialized professionals. We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
+        <p><strong>Select your specific profession below to learn more:</strong></p>
+        
+        <div class="sub-button-grid">
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('eaModal')">Enrolled Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('reModal')">Real Estate Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
+        </div>
+
+    </div>
+</div>
+
+<div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
+        <h2>For Enrolled Agents</h2>
+        <p><em>Content for Enrolled Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('eaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('reModal')">✕</span>
+        <h2>For Real Estate Agents</h2>
+        <p><em>Content for Real Estate Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('reModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
+        <h2>For Business Brokers</h2>
+        <p><em>Content for Business Brokers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('brokerModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
+        <h2>For Bookkeepers</h2>
+        <p><em>Content for Bookkeepers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('bookkeeperModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
+        <h2>For Individuals & Families</h2>
+        <p><em>Content for Individuals goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
+    <div class="chat-heads">
+        <img src="avi-photo.jpg" alt="Avi Crane">
+    </div>
+    <div class="chat-text">Got any questions? I am happy to help.</div>
+</div>
+
+<script>
+    /* Bulletproof Javascript to handle the Pop-Ups */
+    window.openModal = function(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'flex';
+        }
+    }
+    window.closeModal = function(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
