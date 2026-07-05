@@ -427,4 +427,30 @@
 
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="
+        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
+        <h2>For Individuals & Families</h2>
+        <p><em>Content for Individuals goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
+    <div class="chat-heads">
+        <img src="avi-photo.jpg" alt="Avi Crane">
+    </div>
+    <div class="chat-text">Got any questions? I am happy to help.</div>
+</div>
+
+<script>
+    /* Javascript to handle the Pop-Ups */
+    function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
