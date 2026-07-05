@@ -136,4 +136,344 @@
         .modal-content li { margin-bottom: 10px; }
 
         /* Chat Widget - Z-INDEX BOOSTED TO MAXIMUM */
-        .chat-widget { position: fixed !important; bottom: 30px !important; right: 30px !important; background: #fff !important; padding: 20px !important; border-radius: 8px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important; display: flex
+        .chat-widget { position: fixed !important; bottom: 30px !important; right: 30px !important; background: #fff !important; padding: 20px !important; border-radius: 8px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important; display: flex !important; flex-direction: column !important; align-items: center !important; cursor: pointer !important; z-index: 999999 !important; max-width: 250px !important; transition: transform 0.3s !important; border: 1px solid #eaeaea !important; }
+        .chat-widget:hover { transform: translateY(-5px) !important; }
+        .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
+        .chat-heads img { width: 55px; height: 55px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
+        .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
+        .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
+        .close-chat:hover { color: #333; }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="contact-info">
+        <span><strong>Mobile Phone:</strong> 949-346-1459</span>
+        <span><strong>Email:</strong> <a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a></span>
+    </div>
+    <div class="creds">CRD# 6947883 &nbsp;|&nbsp; NPR# 18309523 &nbsp;|&nbsp; CDI# 0L53762</div>
+</div>
+
+<nav class="navbar">
+    <div class="logos">
+        <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo" style="height: 75px;">
+        <img src="aip-logo.png" alt="Alpha Innovation Partners Logo" style="height: 55px; opacity: 0.8;">
+    </div>
+    <div class="nav-buttons">
+        <a onclick="openModal('recruitingModal')" class="nav-button outline" style="cursor: pointer;">Join Our Firm</a>
+        <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
+    <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
+    <div class="hero-badge">SEC Registered Investment Advisor Representative</div>
+    
+    <div class="hero-alliance-box">
+        <h3>Let's Collaborate</h3>
+        <p>Ready to elevate your client service model? Discover the difference between a standard referral arrangement and a true 50/50 integrated partnership. Select an option below to learn more.</p>
+        
+        <div class="button-group">
+            <button class="alliance-btn light" onclick="openModal('cpaModal')">CPA Partnerships</button>
+            <button class="alliance-btn outline" onclick="openModal('allianceModal')">Professional Alliance Program Details</button>
+        </div>
+    </div>
+
+    <a href="#content-start" class="scroll-down">↓</a>
+</header>
+
+<div class="locations" id="content-start">
+    <strong>Infinity Financial Services:</strong> Oakland, CA &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Alpha Innovation Partners:</strong> San Francisco, CA &mdash; Irvine, CA
+</div>
+
+<section class="section">
+    <div class="diff-grid">
+        <div class="diff-text">
+            <h2>The Fiduciary Advantage: Why Securities Licenses Matter</h2>
+            <p style="margin-bottom: 15px;">There is a fundamental difference between a standard insurance agent and a fully licensed Financial Fiduciary. Many advisors hold basic licenses that limit them to selling specialized products under a loose "suitability" standard.</p>
+            <p style="margin-bottom: 15px;"><strong>I hold comprehensive securities licenses</strong> and operate as an Investment Advisor Representative through Infinity Financial Services, an SEC Registered Investment Advisor. This means I am legally bound to the <strong>fiduciary standard</strong>—required by federal law to place your interests above my own, completely free from hidden commissions or product-driven quotas.</p>
+            <p>From complex market equities to advanced estate coordination, my licensing allows me to build and manage a truly comprehensive, unrestricted financial architecture for your wealth.</p>
+        </div>
+        
+        <div class="diff-card">
+            <img src="avi-photo.jpg" alt="Avi Crane Profile" class="profile-img">
+            <h3>Avi Crane</h3>
+            <h4>Financial Fiduciary & Investment Advisor Representative</h4>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span> <strong>Direct:</strong> &nbsp;<a href="tel:9493461459">949-346-1459</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span> <strong>Email:</strong> &nbsp;<a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🏛️</span> <strong>FINRA CRD:</strong> &nbsp;#6947883
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📜</span> <strong>CDI & NPR:</strong> &nbsp;#0L53762 &nbsp;|&nbsp; #18309523
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🤝</span> <strong>Affiliations:</strong> &nbsp;Infinity Financial & AIP
+                </div>
+            </div>
+            
+            <button class="contact-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: #f9fbfb; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 70px 5%;">
+    <div style="max-width: 1250px; margin: auto;">
+        <h2 class="section-title">Insights & Masterclasses</h2>
+        <p class="section-subtitle">Watch our latest discussions on wealth management, tax strategies, and the fiduciary standard.</p>
+        
+        <div class="video-grid">
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/m1uVhKEi2jg" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/QVg_lL0xMYk" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nMdDw5RZYZw" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ldlmw-nwsI8" allowfullscreen></iframe></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div style="max-width: 1250px; margin: auto;">
+        <h2 class="section-title" style="margin-bottom: 50px;">The Financial Decisions We Help You Make</h2>
+        
+        <div class="decisions-header">During Your Working Years</div>
+        <div class="decision-grid">
+            <div class="decision-card">
+                <div class="decision-header-flex">
+                    <div class="decision-icon">🛡️</div>
+                    <h4>How Much Risk Can Your Plan Actually Absorb?</h4>
+                </div>
+                <p>We help structure insurance so risks are covered without excess or gaps.</p>
+                <ul>
+                    <li>Life insurance strategies</li>
+                    <li>Disability & income protection</li>
+                    <li>Long-term care planning</li>
+                </ul>
+            </div>
+            
+            <div class="decision-card">
+                <div class="decision-header-flex">
+                    <div class="decision-icon">📈</div>
+                    <h4>Is Your Wealth Growing Efficiently?</h4>
+                </div>
+                <p>We align investment strategy with risk, time horizon, and goals—not headlines.</p>
+                <ul>
+                    <li>Investment strategy alignment</li>
+                    <li>Tax-aware asset placement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="decisions-header">As You Approach And Enter Retirement</div>
+        <div class="decision-grid">
+            <div class="decision-card">
+                <div class="decision-header-flex">
+                    <div class="decision-icon">📄</div>
+                    <h4>When You Pay Taxes Matters</h4>
+                </div>
+                <p>Tax planning requires coordination across income, investments, and timing.</p>
+                <ul>
+                    <li>Retirement account optimization</li>
+                    <li>Roth conversions & withdrawals</li>
+                </ul>
+            </div>
+            
+            <div class="decision-card">
+                <div class="decision-header-flex">
+                    <div class="decision-icon">👛</div>
+                    <h4>Can Your Assets Support Income Stress?</h4>
+                </div>
+                <p>Retirement is an income strategy, not a single number.</p>
+                <ul>
+                    <li>Income distribution planning</li>
+                    <li>Sequence of returns risk management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee;">
+    <div style="max-width: 1250px; margin: auto;">
+        <h2 class="section-title">Who We Work With</h2>
+        <p class="section-subtitle">Our planning is designed for individuals navigating increasing financial complexity. Each group faces different challenges. Our strategies are built accordingly.</p>
+        
+        <div class="client-grid">
+            <div class="client-card">
+                <div class="client-icon">💼</div>
+                <h4>Senior Professionals & Executives</h4>
+                <p>Balancing income growth, equity compensation, and tax exposure.</p>
+            </div>
+            <div class="client-card" style="border-left: 3px solid #b59a5d;">
+                <div class="client-icon">🏢</div>
+                <h4>Business Owners</h4>
+                <p>Coordinating cash flow, taxes, and long-term planning from variable income.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-icon">🕒</div>
+                <h4>Pre-Retirees<br>(5-10 Years Out)</h4>
+                <p>Protecting what you've built while planning reliable income.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-icon">👥</div>
+                <h4>Families & High-Income Individuals</h4>
+                <p>Aligning protection, growth, and legacy across household priorities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact-section" class="section">
+    <h2 class="section-title">Start the Conversation</h2>
+    <div class="form-container">
+        
+        <form action="https://formsubmit.co/crane_avi@aipfinancial.net" method="POST">
+            <input type="hidden" name="_subject" value="New Website Lead!">
+            <input type="hidden" name="_cc" value="9494452323@vtext.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://cranea.github.io/tfa-crane.github.io/">
+
+            <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
+            <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
+            <div class="input-group"><input type="tel" name="Phone" placeholder="Phone Number"></div>
+            
+            <button type="submit">Contact Our Office</button>
+        </form>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
+        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
+    </div>
+</footer>
+
+<div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
+        <h2>Join Our Firm</h2>
+        <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('recruitingModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Submit a Confidential Inquiry</button>
+    </div>
+</div>
+
+<div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
+        <h2>For CPAs & Tax Professionals</h2>
+        <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
+        <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
+        <ul>
+            <li><strong>Collaborative Planning:</strong> Coordinated tax harvesting, Roth conversions, and estate transitions.</li>
+            <li><strong>Fiduciary Standard:</strong> As an SEC Registered IAR, we are held to the same high ethical standards as you.</li>
+            <li><strong>Value Add:</strong> Provide your clients with specialized resources without increasing your overhead.</li>
+        </ul>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
+        <h2>Professional Alliance Program</h2>
+        <p>Welcome to our exclusive program for specialized professionals. We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
+        <p><strong>Select your specific profession below to learn more:</strong></p>
+        
+        <div class="sub-button-grid">
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('eaModal')">Enrolled Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('reModal')">Real Estate Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
+        </div>
+
+    </div>
+</div>
+
+<div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
+        <h2>For Enrolled Agents</h2>
+        <p><em>Content for Enrolled Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('eaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('reModal')">✕</span>
+        <h2>For Real Estate Agents</h2>
+        <p><em>Content for Real Estate Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('reModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
+        <h2>For Business Brokers</h2>
+        <p><em>Content for Business Brokers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('brokerModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
+        <h2>For Bookkeepers</h2>
+        <p><em>Content for Bookkeepers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('bookkeeperModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
+        <h2>For Individuals & Families</h2>
+        <p><em>Content for Individuals goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
+    <div class="chat-heads">
+        <img src="avi-photo.jpg" alt="Avi Crane">
+    </div>
+    <div class="chat-text">Got any questions? I am happy to help.</div>
+</div>
+
+<script>
+    /* Javascript to handle the Pop-Ups */
+    function openModal(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'flex';
+        }
+    }
+    function closeModal(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
