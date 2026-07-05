@@ -116,6 +116,15 @@
         footer .container { max-width: 1250px; margin: auto; }
         footer p { margin-bottom: 20px; line-height: 1.8; text-align: justify; }
 
+        /* Chat Widget */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; cursor: pointer; z-index: 9999; max-width: 250px; transition: transform 0.3s; border: 1px solid #eaeaea; }
+        .chat-widget:hover { transform: translateY(-5px); }
+        .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
+        .chat-heads img { width: 55px; height: 55px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
+        .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
+        .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
+        .close-chat:hover { color: #333; }
+
         /* Custom Modal Pop-Up CSS */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 35, 55, 0.8); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
         .modal-content { background: #fff; padding: 50px; border-radius: 8px; max-width: 800px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.3); text-align: left; max-height: 90vh; overflow-y: auto; }
@@ -335,4 +344,48 @@
 
 <footer>
     <div class="container">
-        <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-
+        <p style="text-align: center; color: #e1e1e1; font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;">Avi Crane · Financial Fiduciary · SEC Registered Investment Advisor Representative</p>
+        <p><strong>Confidentiality Notice:</strong> This communication may contain privileged and/or confidential information. It is intended solely for the use of the addressee. If you are not the intended recipient, you are strictly prohibited from disclosing, copying, distributing, or using any of this information. If you received this communication in error, please contact the sender immediately and destroy the material in its entirety, whether electronic or hard copy. Confidential, proprietary, or time-sensitive communications should not be transmitted via the internet, as there can be no assurance of actual or timely delivery, receipt and/or confidentiality.</p>
+        <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
+    </div>
+</footer>
+
+<div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
+        <h2>Join Our Firm</h2>
+        <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('recruitingModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Submit a Confidential Inquiry</button>
+    </div>
+</div>
+
+<div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
+        <h2>For CPAs & Tax Professionals</h2>
+        <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
+        <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
+        <ul>
+            <li><strong>Collaborative Planning:</strong> Coordinated tax harvesting, Roth conversions, and estate transitions.</li>
+            <li><strong>Fiduciary Standard:</strong> As an SEC Registered IAR, we are held to the same high ethical standards as you.</li>
+            <li><strong>Value Add:</strong> Provide your clients with specialized resources without increasing your overhead.</li>
+        </ul>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
+        <h2>Professional Alliance Program</h2>
+        <p>Welcome to our exclusive program for specialized professionals. We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
+        <p><strong>Select your specific profession below to learn more:</strong></p>
+        
+        <div class="sub-button-grid">
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('eaModal')">Enrolled Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('reModal')
