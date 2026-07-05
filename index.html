@@ -24,8 +24,11 @@
         .navbar { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .logos { display: flex; align-items: center; gap: 30px; }
         .logos img { height: 65px; width: auto; object-fit: contain; }
+        .nav-buttons { display: flex; gap: 15px; }
         .nav-button { background: #009b9f; color: #fff; padding: 12px 25px; text-decoration: none; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; border-radius: 2px; }
         .nav-button:hover { background: #007a7d; }
+        .nav-button.outline { background: transparent; color: #003b5c; border: 2px solid #003b5c; }
+        .nav-button.outline:hover { background: #003b5c; color: #fff; }
 
         /* Hero Section */
         .hero { background: linear-gradient(rgba(0, 35, 55, 0.85), rgba(0, 35, 55, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover; padding: 140px 5%; text-align: center; color: #fff; }
@@ -59,6 +62,25 @@
         .contact-btn { width: 100%; background: #003b5c; color: white; padding: 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; border: none; cursor: pointer; }
         .contact-btn:hover { background: #00263c; }
 
+        /* Full Width Alliance Callout */
+        .alliance-box { background: #003b5c; color: #fff; padding: 60px 5%; border-radius: 6px; text-align: center; width: 100%; margin: 40px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .alliance-box h3 { color: #fff; font-size: 2.5rem; margin-bottom: 15px; }
+        .alliance-box p { font-size: 1.15rem; color: #e0e6ed; max-width: 800px; margin: 0 auto 35px auto; }
+        .button-group { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; max-width: 1000px; margin: auto; }
+        .alliance-btn { background: #009b9f; color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; font-size: 0.85rem; flex: 1 1 auto; min-width: 250px; }
+        .alliance-btn:hover { background: #007a7d; }
+        .alliance-btn.outline { background: transparent; border: 2px solid #009b9f; }
+        .alliance-btn.outline:hover { background: rgba(0, 155, 159, 0.1); }
+        .alliance-btn.light { background: #fff; color: #003b5c; border: 2px solid #fff; }
+        .alliance-btn.light:hover { background: #f0f4f7; color: #00263c; }
+
+        /* Recruiting Section */
+        .recruiting-box { background: #f0f4f7; padding: 60px 5%; border-radius: 6px; text-align: center; margin-bottom: 60px; border-top: 4px solid #b59a5d; }
+        .recruiting-box h3 { font-size: 2.2rem; color: #003b5c; margin-bottom: 15px; }
+        .recruiting-box p { font-size: 1.05rem; color: #555; max-width: 700px; margin: 0 auto 25px auto; }
+        .recruit-btn { display: inline-block; background: #b59a5d; color: #fff; padding: 18px 40px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; text-decoration: none; transition: background 0.3s; cursor: pointer; border: none; }
+        .recruit-btn:hover { background: #9a814a; }
+
         /* The Financial Decisions Grid */
         .decisions-header { font-size: 1.4rem; font-weight: 800; color: #003b5c; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; border-bottom: 2px solid #eaeaea; padding-bottom: 12px; }
         .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 60px; }
@@ -75,16 +97,6 @@
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-        /* Alliance Callout */
-        .alliance-box { background: #003b5c; color: #fff; padding: 50px; border-radius: 6px; text-align: center; flex: 1; min-width: 350px; display: flex; flex-direction: column; justify-content: center; }
-        .alliance-box h3 { color: #fff; font-size: 2rem; margin-bottom: 15px; border: none; padding: 0; }
-        .alliance-box p { font-size: 1.05rem; color: #e0e6ed; max-width: 700px; margin: 0 auto 25px auto; }
-        .button-group { display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center; }
-        .alliance-btn { width: 100%; max-width: 350px; background: #009b9f; color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; font-size: 0.9rem; white-space: nowrap; }
-        .alliance-btn:hover { background: #007a7d; }
-        .alliance-btn.outline { background: transparent; border: 2px solid #009b9f; }
-        .alliance-btn.outline:hover { background: rgba(0, 155, 159, 0.1); }
 
         /* Who We Work With Grid */
         .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 40px; }
@@ -106,22 +118,15 @@
         footer .container { max-width: 1250px; margin: auto; }
         footer p { margin-bottom: 20px; line-height: 1.8; text-align: justify; }
 
-        /* Chat Widget */
-        .chat-widget { position: fixed; bottom: 30px; right: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; cursor: pointer; z-index: 9999; max-width: 250px; transition: transform 0.3s; border: 1px solid #eaeaea; }
-        .chat-widget:hover { transform: translateY(-5px); }
-        .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
-        .chat-heads img { width: 55px; height: 55px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
-        .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
-        .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
-        .close-chat:hover { color: #333; }
-
         /* Custom Modal Pop-Up CSS */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 35, 55, 0.8); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
-        .modal-content { background: #fff; padding: 50px; border-radius: 8px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.3); text-align: left; }
+        .modal-content { background: #fff; padding: 50px; border-radius: 8px; max-width: 800px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.3); text-align: left; max-height: 90vh; overflow-y: auto; }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #999; transition: color 0.3s; }
         .modal-close:hover { color: #333; }
         .modal-content h2 { font-family: 'Playfair Display', serif; color: #003b5c; font-size: 2.2rem; margin-bottom: 20px; border-bottom: 2px solid #009b9f; padding-bottom: 10px; display: inline-block; }
-        .modal-content p { font-size: 1.05rem; color: #555; margin-bottom: 15px; }
+        .modal-content p { font-size: 1.05rem; color: #555; margin-bottom: 15px; line-height: 1.7; }
+        .modal-content ul { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; }
+        .modal-content li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -139,7 +144,10 @@
         <img src="infinity-logo.jpg" alt="Infinity Financial Services Advisory Logo" style="height: 75px;">
         <img src="aip-logo.png" alt="Alpha Innovation Partners Logo" style="height: 55px; opacity: 0.8;">
     </div>
-    <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
+    <div class="nav-buttons">
+        <a href="#recruiting-section" class="nav-button outline">Recruiting</a>
+        <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
+    </div>
 </nav>
 
 <header class="hero">
@@ -189,37 +197,28 @@
     </div>
 </section>
 
-<section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-    <div style="max-width: 1250px; margin: auto;">
+<section style="background-color: #f9fbfb; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 20px 0;">
+    <div style="max-width: 1250px; margin: auto; padding: 0 5%;">
         
-        <div class="diff-grid" style="align-items: center;">
-            <div class="diff-text" style="flex: 1.5;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">For CPAs & Tax Professionals</h2>
-                <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
-                <p style="font-size: 1.1rem; color: #555;">Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
-                
-                <ul style="margin-top: 25px; padding-left: 20px; line-height: 1.8; color: #444;">
-                    <li><strong>Collaborative Planning:</strong> Coordinated tax harvesting, Roth conversions, and estate transitions.</li>
-                    <li><strong>Fiduciary Standard:</strong> As an SEC Registered IAR, we are held to the same high ethical standards as you.</li>
-                    <li><strong>Value Add:</strong> Provide your clients with specialized resources without increasing your overhead.</li>
-                </ul>
-            </div>
+        <div class="alliance-box">
+            <h3>Let's Collaborate</h3>
+            <p>Ready to elevate your client service model and build a powerful referral network? Select an option below to learn more about our strategic partnerships.</p>
             
-            <div class="alliance-box">
-                <h3>Let's Collaborate</h3>
-                <p>Ready to elevate your client service model and build a powerful referral network? Select an option below.</p>
-                
-                <div class="button-group">
-                    <button class="alliance-btn" onclick="openModal('allianceModal')">CPA Partnership Details</button>
-                    <button class="alliance-btn outline" onclick="openModal('allianceModal')">Alliance Program Info</button>
-                </div>
+            <div class="button-group">
+                <button class="alliance-btn light" onclick="openModal('cpaModal')">CPA Partnerships</button>
+                <button class="alliance-btn outline" onclick="openModal('allianceModal')">Professional Alliance Program Details</button>
+                <button class="alliance-btn" onclick="openModal('eaModal')">Enrolled Agents</button>
+                <button class="alliance-btn" onclick="openModal('reModal')">Real Estate Agents</button>
+                <button class="alliance-btn" onclick="openModal('brokerModal')">Business Brokers</button>
+                <button class="alliance-btn" onclick="openModal('bookkeeperModal')">Bookkeepers</button>
+                <button class="alliance-btn" onclick="openModal('individualModal')">Individuals</button>
             </div>
         </div>
 
-        <h2 class="section-title" style="margin-top: 80px;">Insights & Masterclasses</h2>
+        <h2 class="section-title" style="margin-top: 60px;">Insights & Masterclasses</h2>
         <p class="section-subtitle">Watch our latest discussions on wealth management, tax strategies, and the fiduciary standard.</p>
         
-        <div class="video-grid">
+        <div class="video-grid" style="margin-bottom: 60px;">
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/m1uVhKEi2jg" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/QVg_lL0xMYk" allowfullscreen></iframe></div>
@@ -322,6 +321,13 @@
 </section>
 
 <section id="contact-section" class="section">
+    
+    <div id="recruiting-section" class="recruiting-box">
+        <h3>Explore Career Opportunities</h3>
+        <p>We are actively expanding our team of financial professionals. Whether you are an established advisor looking for true fiduciary independence or exploring a transition into wealth management, we offer the infrastructure, institutional strategies, and support you need to scale your practice.</p>
+        <button class="recruit-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Recruiting</button>
+    </div>
+
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
         
@@ -335,7 +341,7 @@
             <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
             <div class="input-group"><input type="tel" name="Phone" placeholder="Phone Number"></div>
             
-            <button type="submit">Request Consultation</button>
+            <button type="submit">Contact Our Office</button>
         </form>
 
     </div>
@@ -349,26 +355,79 @@
     </div>
 </footer>
 
-<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
-    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
-    <div class="chat-heads">
-        <img src="avi-photo.jpg" alt="Avi Crane">
+<div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
+        <h2>For CPAs & Tax Professionals</h2>
+        <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
+        <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
+        <ul>
+            <li><strong>Collaborative Planning:</strong> Coordinated tax harvesting, Roth conversions, and estate transitions.</li>
+            <li><strong>Fiduciary Standard:</strong> As an SEC Registered IAR, we are held to the same high ethical standards as you.</li>
+            <li><strong>Value Add:</strong> Provide your clients with specialized resources without increasing your overhead.</li>
+        </ul>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
-    <div class="chat-text">Got any questions? We're happy to help.</div>
 </div>
 
 <div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
         <h2>Professional Alliance Program</h2>
-        <p>Welcome to our exclusive program for CPAs, Tax Professionals, and Estate Planning Attorneys.</p>
-        <p>By partnering with our firm, you can seamlessly expand your client service model. We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
-        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('allianceModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Contact Avi to Partner Today</button>
+        <p>Welcome to our exclusive program for specialized professionals. By partnering with our firm, you can seamlessly expand your client service model.</p>
+        <p>We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('allianceModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Partnership</button>
     </div>
 </div>
 
+<div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
+        <h2>For Enrolled Agents</h2>
+        <p><em>Content for Enrolled Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('eaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('reModal')">✕</span>
+        <h2>For Real Estate Agents</h2>
+        <p><em>Content for Real Estate Agents goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('reModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
+        <h2>For Business Brokers</h2>
+        <p><em>Content for Business Brokers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('brokerModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
+        <h2>For Bookkeepers</h2>
+        <p><em>Content for Bookkeepers goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('bookkeeperModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
+        <h2>For Individuals & Families</h2>
+        <p><em>Content for Individuals goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+
 <script>
-    /* Javascript to handle the Pop-Up */
+    /* Javascript to handle the Pop-Ups */
     function openModal(id) {
         document.getElementById(id).style.display = 'flex';
     }
