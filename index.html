@@ -6,7 +6,7 @@
     <title>Avi Crane | Infinity Financial Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
         /* CSS Reset & Typography */
@@ -50,7 +50,7 @@
         .diff-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #f0f4f7; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         .diff-card h3 { font-size: 1.8rem; margin-bottom: 5px; color: #003b5c; }
-        .diff-card h4 { font-family: 'Open Sans', sans-serif; font-size: 0.9rem; color: #009b9f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+        .diff-card h4 { font-family: 'Open Sans', sans-serif; font-size: 0.85rem; color: #009b9f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
         .contact-grid { width: 100%; text-align: left; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 20px; margin-bottom: 25px; }
         .contact-item { margin-bottom: 15px; display: flex; align-items: center; }
         .contact-icon { width: 30px; color: #003b5c; font-size: 1.2rem; }
@@ -60,8 +60,8 @@
         .contact-btn:hover { background: #00263c; }
 
         /* The Financial Decisions Grid */
-        .decisions-header { font-size: 0.9rem; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; border-bottom: 1px solid #eaeaea; padding-bottom: 10px; }
-        .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .decisions-header { font-size: 1.4rem; font-weight: 800; color: #003b5c; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; border-bottom: 2px solid #eaeaea; padding-bottom: 12px; }
+        .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .decision-card { background: #fff; padding: 40px; border: 1px solid #eaeaea; border-radius: 6px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
         .decision-header-flex { display: flex; align-items: center; margin-bottom: 20px; }
         .decision-icon { width: 50px; height: 50px; background: #f0f4f7; color: #003b5c; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-right: 20px; }
@@ -81,7 +81,7 @@
         .alliance-box h3 { color: #fff; font-size: 2rem; margin-bottom: 15px; border: none; padding: 0; }
         .alliance-box p { font-size: 1.05rem; color: #e0e6ed; max-width: 700px; margin: 0 auto 25px auto; }
         .button-group { display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center; }
-        .alliance-btn { width: 100%; max-width: 350px; background: #009b9f; color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; font-size: 0.9rem; }
+        .alliance-btn { width: 100%; max-width: 350px; background: #009b9f; color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; font-size: 0.9rem; white-space: nowrap; }
         .alliance-btn:hover { background: #007a7d; }
         .alliance-btn.outline { background: transparent; border: 2px solid #009b9f; }
         .alliance-btn.outline:hover { background: rgba(0, 155, 159, 0.1); }
@@ -98,8 +98,8 @@
         .form-container { background: #fff; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 800px; margin: auto; border-top: 5px solid #003b5c; }
         .input-group { margin-bottom: 25px; }
         input { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-size: 1rem; background: #fafafa; }
-        button { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; }
-        button:hover { background: #00263c; }
+        button[type="submit"] { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; }
+        button[type="submit"]:hover { background: #00263c; }
 
         /* Footer */
         footer { background: #111; color: #777; padding: 70px 5%; font-size: 0.8rem; }
@@ -114,6 +114,14 @@
         .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
         .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
         .close-chat:hover { color: #333; }
+
+        /* Custom Modal Pop-Up CSS */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 35, 55, 0.8); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+        .modal-content { background: #fff; padding: 50px; border-radius: 8px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.3); text-align: left; }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #999; transition: color 0.3s; }
+        .modal-close:hover { color: #333; }
+        .modal-content h2 { font-family: 'Playfair Display', serif; color: #003b5c; font-size: 2.2rem; margin-bottom: 20px; border-bottom: 2px solid #009b9f; padding-bottom: 10px; display: inline-block; }
+        .modal-content p { font-size: 1.05rem; color: #555; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -156,7 +164,7 @@
         <div class="diff-card">
             <img src="avi-photo.jpg" alt="Avi Crane Profile" class="profile-img">
             <h3>Avi Crane</h3>
-            <h4>Financial Fiduciary & IAR</h4>
+            <h4>Financial Fiduciary & Investment Advisor Representative</h4>
             
             <div class="contact-grid">
                 <div class="contact-item">
@@ -178,13 +186,3 @@
             
             <button class="contact-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
         </div>
-    </div>
-</section>
-
-<section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-    <div style="max-width: 1250px; margin: auto;">
-        
-        <div class="diff-grid" style="align-items: center;">
-            <div class="diff-text" style="flex: 1.5;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 15px;">For CPAs & Tax Professionals</h2>
-                <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px
