@@ -43,14 +43,21 @@
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
         /* Differentiator Section */
-        .diff-grid { display: flex; flex-wrap: wrap; gap: 60px; margin-bottom: 40px; }
+        .diff-grid { display: flex; flex-wrap: wrap; gap: 60px; margin-bottom: 40px; align-items: stretch; }
         .diff-text { flex: 2; min-width: 320px; font-size: 1.05rem; }
-        .diff-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; align-self: flex-start; }
-        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin: 0 auto 25px auto; display: block; border: 4px solid #f0f4f7; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .diff-card h3 { margin-bottom: 25px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 15px; text-align: center; }
-        .diff-card ul { list-style: none; }
-        .diff-card li { margin-bottom: 20px; font-size: 0.95rem; }
-        .diff-card li strong { color: #003b5c; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .diff-card { flex: 1; min-width: 320px; background: #fff; padding: 45px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); border-top: 5px solid #009b9f; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #f0f4f7; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .diff-card h3 { font-size: 1.8rem; margin-bottom: 5px; color: #003b5c; }
+        .diff-card h4 { font-family: 'Open Sans', sans-serif; font-size: 0.9rem; color: #009b9f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+        
+        /* Engaging Contact Grid */
+        .contact-grid { width: 100%; text-align: left; font-size: 0.95rem; border-top: 1px solid #eee; padding-top: 20px; margin-bottom: 25px; }
+        .contact-item { margin-bottom: 15px; display: flex; align-items: center; }
+        .contact-icon { width: 30px; color: #003b5c; font-size: 1.2rem; }
+        .contact-item a { color: #444; text-decoration: none; transition: color 0.3s; }
+        .contact-item a:hover { color: #009b9f; }
+        .contact-btn { width: 100%; background: #003b5c; color: white; padding: 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: 0.3s; border: none; cursor: pointer; }
+        .contact-btn:hover { background: #00263c; }
 
         /* The Financial Decisions Grid */
         .decisions-header { font-size: 0.9rem; font-weight: bold; color: #888; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; border-bottom: 1px solid #eaeaea; padding-bottom: 10px; }
@@ -70,11 +77,14 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         /* Alliance Callout */
-        .alliance-box { background: #003b5c; color: #fff; padding: 50px; border-radius: 6px; margin-top: 20px; text-align: center; }
+        .alliance-box { background: #003b5c; color: #fff; padding: 50px; border-radius: 6px; text-align: center; flex: 1; min-width: 350px; display: flex; flex-direction: column; justify-content: center; }
         .alliance-box h3 { color: #fff; font-size: 2rem; margin-bottom: 15px; border: none; padding: 0; }
         .alliance-box p { font-size: 1.05rem; color: #e0e6ed; max-width: 700px; margin: 0 auto 25px auto; }
-        .alliance-btn { display: inline-block; background: #009b9f; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; }
+        .button-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .alliance-btn { background: #009b9f; color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: background 0.3s; cursor: pointer; border: none; font-size: 0.9rem; }
         .alliance-btn:hover { background: #007a7d; }
+        .alliance-btn.outline { background: transparent; border: 2px solid #009b9f; }
+        .alliance-btn.outline:hover { background: rgba(0, 155, 159, 0.1); }
 
         /* Who We Work With Grid */
         .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 40px; }
@@ -145,15 +155,28 @@
         
         <div class="diff-card">
             <img src="avi-photo.jpg" alt="Avi Crane Profile" class="profile-img">
-            <h3>Professional Snapshot</h3>
-            <ul>
-                <li><strong>Advisor:</strong> Avi Crane</li>
-                <li><strong>Designation:</strong> Financial Fiduciary & Investment Advisor Representative</li>
-                <li><strong>Direct Line:</strong> 949-346-1459</li>
-                <li><strong>Email:</strong> crane_avi@aipfinancial.net</li>
-                <li><strong>Credentials:</strong> CRD# 6947883<br>NPR# 18309523<br>CDI# 0L53762</li>
-                <li><strong>Affiliations:</strong> Alpha Innovation Partners<br>Infinity Financial Services Advisory</li>
-            </ul>
+            <h3>Avi Crane</h3>
+            <h4>Financial Fiduciary & IAR</h4>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span> <strong>Direct:</strong> &nbsp;<a href="tel:9493461459">949-346-1459</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span> <strong>Email:</strong> &nbsp;<a href="mailto:crane_avi@aipfinancial.net">crane_avi@aipfinancial.net</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🏛️</span> <strong>FINRA CRD:</strong> &nbsp;#6947883
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📜</span> <strong>CDI & NPR:</strong> &nbsp;#0L53762 &nbsp;|&nbsp; #18309523
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🤝</span> <strong>Affiliations:</strong> &nbsp;Infinity Financial & AIP
+                </div>
+            </div>
+            
+            <button class="contact-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
         </div>
     </div>
 </section>
@@ -162,7 +185,7 @@
     <div style="max-width: 1250px; margin: auto;">
         
         <div class="diff-grid" style="align-items: center;">
-            <div class="diff-text">
+            <div class="diff-text" style="flex: 1.5;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 15px;">For CPAs & Tax Professionals</h2>
                 <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
                 <p style="font-size: 1.1rem; color: #555;">Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
@@ -175,9 +198,13 @@
             </div>
             
             <div class="alliance-box">
-                <h3>The Professional Alliance Program</h3>
-                <p>If you are a CPA or estate planning attorney looking to elevate your client service model, we invite you to explore a strategic partnership.</p>
-                <button class="alliance-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+                <h3>Let's Collaborate</h3>
+                <p>Ready to elevate your client service model and build a powerful referral network? Select an option below.</p>
+                
+                <div class="button-group">
+                    <button class="alliance-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">CPA Partnership Details</button>
+                    <button class="alliance-btn outline" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Alliance Program Info</button>
+                </div>
             </div>
         </div>
 
