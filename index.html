@@ -74,13 +74,6 @@
         .alliance-btn.light { background: #fff; color: #003b5c; border: 2px solid #fff; }
         .alliance-btn.light:hover { background: #f0f4f7; color: #00263c; }
 
-        /* Recruiting Section */
-        .recruiting-box { background: #f0f4f7; padding: 60px 5%; border-radius: 6px; text-align: center; margin-bottom: 60px; border-top: 4px solid #b59a5d; }
-        .recruiting-box h3 { font-size: 2.2rem; color: #003b5c; margin-bottom: 15px; }
-        .recruiting-box p { font-size: 1.05rem; color: #555; max-width: 700px; margin: 0 auto 25px auto; }
-        .recruit-btn { display: inline-block; background: #b59a5d; color: #fff; padding: 18px 40px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; text-decoration: none; transition: background 0.3s; cursor: pointer; border: none; }
-        .recruit-btn:hover { background: #9a814a; }
-
         /* The Financial Decisions Grid */
         .decisions-header { font-size: 1.4rem; font-weight: 800; color: #003b5c; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; border-bottom: 2px solid #eaeaea; padding-bottom: 12px; }
         .decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 60px; }
@@ -127,6 +120,15 @@
         .modal-content p { font-size: 1.05rem; color: #555; margin-bottom: 15px; line-height: 1.7; }
         .modal-content ul { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; }
         .modal-content li { margin-bottom: 10px; }
+
+        /* Chat Widget */
+        .chat-widget { position: fixed; bottom: 30px; right: 30px; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center; cursor: pointer; z-index: 9999; max-width: 250px; transition: transform 0.3s; border: 1px solid #eaeaea; }
+        .chat-widget:hover { transform: translateY(-5px); }
+        .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
+        .chat-heads img { width: 55px; height: 55px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: cover; }
+        .chat-text { color: #333; font-size: 0.95rem; text-align: center; position: relative; }
+        .close-chat { position: absolute; top: -25px; right: -10px; font-size: 1.2rem; color: #999; cursor: pointer; }
+        .close-chat:hover { color: #333; }
     </style>
 </head>
 <body>
@@ -145,7 +147,7 @@
         <img src="aip-logo.png" alt="Alpha Innovation Partners Logo" style="height: 55px; opacity: 0.8;">
     </div>
     <div class="nav-buttons">
-        <a href="#recruiting-section" class="nav-button outline">Recruiting</a>
+        <a onclick="openModal('recruitingModal')" class="nav-button outline" style="cursor: pointer;">Join Our Firm</a>
         <a href="https://brokercheck.finra.org/individual/summary/6947883" target="_blank" class="nav-button">FINRA BrokerCheck</a>
     </div>
 </nav>
@@ -321,13 +323,6 @@
 </section>
 
 <section id="contact-section" class="section">
-    
-    <div id="recruiting-section" class="recruiting-box">
-        <h3>Explore Career Opportunities</h3>
-        <p>We are actively expanding our team of financial professionals. Whether you are an established advisor looking for true fiduciary independence or exploring a transition into wealth management, we offer the infrastructure, institutional strategies, and support you need to scale your practice.</p>
-        <button class="recruit-btn" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Inquire About Recruiting</button>
-    </div>
-
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
         
@@ -354,6 +349,20 @@
         <p><strong>Disclosure:</strong> This is not an offer, or solicitation of any offer to buy or sell an security, investment, or other product, nor do we accept, buy, sell or cancel orders by email, or any instructions by email that would require your signature. Investment Advisory Services are offered through Infinity Financial Services Advisory, an SEC Registered Investment Advisor. Alpha Innovation Partners and Infinity Financial Services Advisory are separate and unaffiliated entities. Member FINRA/SIPC.</p>
     </div>
 </footer>
+
+<div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
+        <h2>Join Our Firm</h2>
+        <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('recruitingModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Submit a Confidential Inquiry</button>
+    </div>
+</div>
 
 <div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -418,23 +427,4 @@
 
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
-        <h2>For Individuals & Families</h2>
-        <p><em>Content for Individuals goes here...</em></p>
-        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
-    </div>
-</div>
-
-
-<script>
-    /* Javascript to handle the Pop-Ups */
-    function openModal(id) {
-        document.getElementById(id).style.display = 'flex';
-    }
-    function closeModal(id) {
-        document.getElementById(id).style.display = 'none';
-    }
-</script>
-
-</body>
-</html>
+        <span class="
