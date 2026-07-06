@@ -426,6 +426,7 @@
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('medicareModal')">Medicare & Health Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('ltcModal')">Long-Term Care / Asset Protection</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
         </div>
 
@@ -499,6 +500,26 @@
     </div>
 </div>
 
+<div id="ltcModal" class="modal-overlay" onclick="closeModal('ltcModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('ltcModal')">✕</span>
+        <h2>Long-Term Care & Asset Protection</h2>
+
+        <p>While often referred to as Long-Term Care planning, we approach this as true <strong>Asset Protection</strong>. A sudden health event shouldn't derail a lifetime of wealth accumulation. We design sophisticated strategies to shield your portfolio and preserve your legacy while ensuring you have access to the highest quality of care.</p>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="LTC PRIMER.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: LTC Primer</a>
+            <a href="LTC_Wealth_Shield_Strategy.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Shield Strategy</a>
+        </div>
+
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/5xdh5kzYQhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('ltcModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
@@ -518,5 +539,3 @@
 
 </body>
 </html>
-
-
