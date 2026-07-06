@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi Crane | Infinity Financial Services</title>
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     
+    <!-- JavaScript "Engine" moved to the very top to prevent cut-off issues -->
     <script>
         window.openModal = function(id) {
             var modal = document.getElementById(id);
@@ -185,19 +187,24 @@
     </div>
 </nav>
 
+<!-- Redesigned Hero with Buttons at the Top & Scroll Arrow -->
 <header class="hero">
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     <div class="hero-badge">SEC Registered Investment Advisor Representative</div>
     
+    <!-- NEW: Main Screen Specialized Strategies Section (For Future Growth) -->
     <div style="margin-bottom: 50px;">
         <h3 style="color: #fff; font-family: 'Open Sans', sans-serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">Specialized Planning Strategies</h3>
         <div class="button-group">
             <button class="alliance-btn" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
             
-            </div>
+            <!-- You can easily add more buttons right here in the future! -->
+            
+        </div>
     </div>
 
+    <!-- Professional Alliance Buttons Front and Center -->
     <div class="hero-alliance-box">
         <h3>Let's Collaborate</h3>
         <p>Ready to elevate your client service model? Discover the difference between a standard referral arrangement and a true 50/50 integrated partnership. Select an option below to learn more.</p>
@@ -208,6 +215,7 @@
         </div>
     </div>
 
+    <!-- Bouncing Scroll Arrow -->
     <a href="#content-start" class="scroll-down">↓</a>
 </header>
 
@@ -252,6 +260,7 @@
     </div>
 </section>
 
+<!-- Insights & Videos Section -->
 <section style="background-color: #f9fbfb; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 70px 5%;">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title">Insights & Masterclasses</h2>
@@ -267,6 +276,7 @@
     </div>
 </section>
 
+<!-- The Financial Decisions Section -->
 <section class="section">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title" style="margin-bottom: 50px;">The Financial Decisions We Help You Make</h2>
@@ -328,6 +338,7 @@
     </div>
 </section>
 
+<!-- Who We Work With Grid -->
 <section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee;">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title">Who We Work With</h2>
@@ -358,6 +369,7 @@
     </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact-section" class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
@@ -386,14 +398,18 @@
     </div>
 </footer>
 
+<!-- MODALS (Pop-Ups) -->
+
+<!-- Join Our Firm Modal -->
 <div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
         <h2>Join Our Firm</h2>
         <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
         
-        <a href="Your Opportunity for Your Future.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Your Opportunity for Your Future</a>
+        <a href="Your%20Opportunity%20for%20Your%20Future.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Your Opportunity for Your Future</a>
         
+        <!-- HEAVY-DUTY YOUTUBE EMBED -->
         <div class="video-wrapper" style="margin: 25px 0;">
             <iframe src="https://www.youtube.com/embed/bUX__dx4ijg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
@@ -402,12 +418,14 @@
     </div>
 </div>
 
+<!-- CPA Modal -->
 <div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
         <h2>For CPAs & Tax Professionals</h2>
         
-        <img src="CPA The_White-Glove_Fiduciary_Alliance.png" alt="CPA Alliance" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        <!-- FIX: Replaced the space with %20 so web browsers can read it -->
+        <img src="CPA%20The_White-Glove_Fiduciary_Alliance.png" alt="CPA Alliance" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;">
         
         <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
         <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
@@ -415,12 +433,15 @@
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
             <a href="CPA_Growth_Blueprintטוב.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 CPA Growth Blueprint</a>
             <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
+            <!-- FIX: Added a button to view the image full-screen just in case! -->
+            <a href="CPA%20The_White-Glove_Fiduciary_Alliance.png" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">🖼️ View Alliance Chart</a>
         </div>
 
         <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
 </div>
 
+<!-- THE MAIN HUB: Professional Alliance Modal -->
 <div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
@@ -440,6 +461,7 @@
     </div>
 </div>
 
+<!-- Enrolled Agents Modal -->
 <div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
@@ -455,6 +477,7 @@
     </div>
 </div>
 
+<!-- Real Estate Agents Modal -->
 <div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('reModal')">✕</span>
@@ -470,6 +493,7 @@
     </div>
 </div>
 
+<!-- Business Brokers Modal -->
 <div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
@@ -479,6 +503,7 @@
     </div>
 </div>
 
+<!-- Bookkeepers Modal -->
 <div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
@@ -494,6 +519,7 @@
     </div>
 </div>
 
+<!-- Medicare & Health Agents Modal -->
 <div id="medicareModal" class="modal-overlay" onclick="closeModal('medicareModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('medicareModal')">✕</span>
@@ -507,6 +533,7 @@
     </div>
 </div>
 
+<!-- NEW: Long-Term Care Modal (UPDATED VIDEO LINK) -->
 <div id="ltcModal" class="modal-overlay" onclick="closeModal('ltcModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('ltcModal')">✕</span>
@@ -515,18 +542,21 @@
         <p>While often referred to as Long-Term Care planning, we approach this as true <strong>Asset Protection</strong>. A sudden health event shouldn't derail a lifetime of wealth accumulation. We design sophisticated strategies to shield your portfolio and preserve your legacy while ensuring you have access to the highest quality of care.</p>
 
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
-            <a href="LTC PRIMER.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: LTC Primer</a>
+            <!-- FIX: Replaced the space with %20 so web browsers can read it -->
+            <a href="LTC%20PRIMER.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: LTC Primer</a>
             <a href="LTC_Wealth_Shield_Strategy.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Shield Strategy</a>
         </div>
 
+        <!-- YOUTUBE EMBED -->
         <div class="video-wrapper" style="margin: 25px 0;">
-            <iframe src="https://www.youtube.com/embed/5xdh5kzYQhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/49gFU1dEw2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('ltcModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
     </div>
 </div>
 
+<!-- Individuals Modal -->
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
@@ -536,6 +566,7 @@
     </div>
 </div>
 
+<!-- Chat Widget -->
 <div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
     <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
     <div class="chat-heads">
