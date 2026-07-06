@@ -405,7 +405,7 @@
         <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
         
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
-            <a href="CPA_Growth_Blueprint210.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 CPA Growth Blueprint</a>
+            <a href="CPA_Growth_Blueprintטוב.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 CPA Growth Blueprint</a>
             <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
         </div>
 
@@ -425,6 +425,7 @@
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('reModal')">Real Estate Agents</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('medicareModal')">Medicare & Health Agents</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
         </div>
 
@@ -478,10 +479,23 @@
         
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
             <a href="Strategic_Bookkeeping_Transformation.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Strategic Bookkeeping Transformation</a>
-            <a href="Transforming_Bookkeeping_into_Advisory_Revenue.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Transforming into Advisory Revenue</a>
+            <a href="Transforming_Bookkeeping_into_Advisory_Revenue_(2).pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Transforming into Advisory Revenue</a>
         </div>
 
         <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('bookkeeperModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="medicareModal" class="modal-overlay" onclick="closeModal('medicareModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('medicareModal')">✕</span>
+        <h2>For Medicare & Group Health Agents</h2>
+        
+        <img src="California_Medicare_Agent_Compensation_Comparison.png" alt="Medicare Agent Compensation Comparison" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        
+        <p>Elevate your practice by partnering with a fully licensed fiduciary. We help you seamlessly integrate comprehensive wealth management into your existing health and Medicare client base.</p>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('medicareModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
 </div>
 
