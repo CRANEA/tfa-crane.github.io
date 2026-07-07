@@ -155,6 +155,7 @@
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #999; transition: color 0.3s; }
         .modal-close:hover { color: #333; }
         .modal-content h2 { font-family: 'Playfair Display', serif; color: #003b5c; font-size: 2.2rem; margin-bottom: 20px; border-bottom: 2px solid #009b9f; padding-bottom: 10px; display: inline-block; }
+        .modal-content h3 { font-family: 'Playfair Display', serif; color: #003b5c; font-size: 1.4rem; margin-top: 25px; margin-bottom: 15px; }
         .modal-content p { font-size: 1.05rem; color: #555; margin-bottom: 15px; line-height: 1.7; }
         .modal-content ul { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; }
         .modal-content li { margin-bottom: 10px; }
@@ -206,6 +207,7 @@
         <div class="button-group">
             <button class="alliance-btn light" onclick="openModal('cpaModal')">CPA Partnerships</button>
             <button class="alliance-btn outline" style="border-color: #fff; color: #fff;" onclick="openModal('allianceModal')">Professional Alliance Program Details</button>
+            <button class="alliance-btn" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
         </div>
     </div>
 
@@ -559,13 +561,31 @@
     </div>
 </div>
 
-<!-- NEW: SEC Modal Placeholder -->
+<!-- NEW: SEC Modal (Filled with user content) -->
 <div id="secModal" class="modal-overlay" onclick="closeModal('secModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('secModal')">✕</span>
-        <h2>SEC Registered Investment Advisor</h2>
+        <h2>What is an Investment Advisor Representative (IAR)?</h2>
         
-        <p><em>Content coming soon! Provide your text and we will format it beautifully right here.</em></p>
+        <p>If you are looking for financial help, you will likely encounter a variety of titles: financial advisor, wealth manager, broker, or insurance agent. To the average investor, these titles all sound the same. However, not all financial professionals operate under the same rules, and they are not all held to the same legal standards.</p>
+        
+        <p>As an <strong>Investment Advisor Representative (IAR)</strong>, I hold a specific legal designation that sets my practice apart from the vast majority of people working in the financial industry.</p>
+        
+        <h3>A Select Group with a Higher Level of Knowledge</h3>
+        <p>The financial services industry is massive, employing millions of people across banks, insurance agencies, and traditional brokerage firms. Out of all the individuals selling financial products, only a small percentage hold the formal IAR designation.</p>
+        <p>To earn this title, an advisor must pass rigorous state or federal licensing exams that test a deep understanding of economics, complex investment vehicles, retirement planning, and strict ethical guidelines. When you work with an IAR, you are collaborating with a professional who has demonstrated a uniquely high level of technical knowledge and dedication to the true craft of investment advising, rather than just sales.</p>
+        
+        <h3>The Fiduciary Difference: Your Interests Come First</h3>
+        <p>The most important distinction of an IAR is how we are legally required to treat you. As an IAR, I am legally bound to provide <strong>fiduciary advice</strong>.</p>
+        
+        <ul>
+            <li><strong>Working with an IAR (Fiduciary):</strong> I am legally obligated to act in your absolute best interest at all times. My recommendations must be driven entirely by what will benefit your financial future the most, complete with full transparency regarding fees and no hidden agendas.</li>
+            <li><strong>Working with a non-IAR:</strong> Many other individuals in the financial industry are not legally required to work as fiduciaries. Instead, they often operate under a lesser standard. This means they are legally allowed to recommend a financial product that is simply "okay" for you, even if a better, lower-cost option exists, because the product they recommend pays them a higher commission.</li>
+        </ul>
+        
+        <h3>Why This Matters to You</h3>
+        <p>When it comes to your life savings, trust should not be a guessing game. Choosing to work with an Investment Advisor Representative means choosing peace of mind. It means knowing that the advice you receive is objective, highly informed, and tailored entirely to your success.</p>
+        <p>You deserve a financial partner who sits on the same side of the table as you—and as an IAR, that is exactly what I am legally bound to do.</p>
         
         <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('secModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
     </div>
