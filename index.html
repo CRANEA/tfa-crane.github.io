@@ -54,13 +54,13 @@
         /* REDESIGNED Hero Section */
         .hero { position: relative; background: linear-gradient(rgba(0, 25, 40, 0.88), rgba(0, 25, 40, 0.88)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover; padding: 120px 5% 150px 5%; text-align: center; color: #fff; z-index: 1; }
         .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 30px; }
+        .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 40px; }
         
-        /* Main Screen Action Buttons Container */
-        .hero-badge-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-bottom: 50px; }
+        /* UPDATED: Main Screen Action Buttons Container (2x2 Grid) */
+        .hero-badge-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 900px; margin: 0 auto 50px auto; }
         
-        /* Main Screen Action Buttons Styling */
-        .hero-badge { display: inline-block; width: 100%; max-width: 650px; background: #009b9f; color: white; padding: 14px 25px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        /* UPDATED: Main Screen Action Buttons Styling */
+        .hero-badge { flex: 1 1 calc(50% - 15px); min-width: 300px; background: #009b9f; color: white; padding: 16px 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .hero-badge:hover { background: #007a7d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
         /* New Hero Alliance Box */
@@ -199,14 +199,14 @@
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     
-    <!-- Main Screen Action Buttons Stack -->
+    <!-- UPDATED: Main Screen Action Buttons Stack (Now a 2x2 Grid) -->
     <div class="hero-badge-container">
-        <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor Representative</button>
+        <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
-        <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Combo Plan Simulator</button>
+        <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Simulator</button>
         
-        <!-- NEW: Retirement Analyzer Button -->
-        <button class="hero-badge" onclick="window.open('https://sites.google.com/craneandassociates.net/alphainnovationpartnersretire/home', '_blank')">Fiduciary Retirement Readiness App</button>
+        <!-- NEW: Opens the explanatory modal first before the Google Site -->
+        <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
     </div>
     
     <!-- Professional Alliance Buttons Front and Center -->
@@ -265,18 +265,8 @@
     </div>
 </section>
 
-<!-- NEW: Dedicated Retirement Analyzer Call-Out Banner -->
-<section style="background: linear-gradient(135deg, #003b5c, #00263c); color: #fff; padding: 90px 5%; text-align: center; border-top: 5px solid #009b9f;">
-    <div style="max-width: 900px; margin: auto;">
-        <h2 style="color: #fff; font-size: 2.6rem; margin-bottom: 25px; font-family: 'Playfair Display', serif;">Is Your Retirement Plan Designed to Outlast Inflation?</h2>
-        <p style="font-size: 1.15rem; font-weight: 300; line-height: 1.8; margin-bottom: 25px; color: #e0e6ed;">Most retirement projections fail because they rely on static, overly optimistic assumptions. At Alpha Innovation Partners, we believe next-generation planning requires next-generation stress testing.</p>
-        <p style="font-size: 1.15rem; font-weight: 300; line-height: 1.8; margin-bottom: 40px; color: #e0e6ed;">Use our proprietary, confidential <strong>Fiduciary Retirement Analyzer</strong> to stress-test your household nest egg, Social Security benefits, and pension income against real-world inflation and market volatility. Map your true trajectory through age 95 and receive your instant Sustainability Verdict—completely free.</p>
-        <button class="alliance-btn" style="font-size: 1.1rem; padding: 18px 35px; border: 2px solid #fff;" onclick="window.open('https://sites.google.com/craneandassociates.net/alphainnovationpartnersretire/home', '_blank')">Try the Retirement Analyzer ➔</button>
-    </div>
-</section>
-
 <!-- Insights & Videos Section -->
-<section style="background-color: #f9fbfb; border-bottom: 1px solid #eee; padding: 70px 5%;">
+<section style="background-color: #f9fbfb; border-bottom: 1px solid #eee; border-top: 1px solid #eee; padding: 70px 5%;">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title">Insights & Masterclasses</h2>
         <p class="section-subtitle">Watch our latest discussions on wealth management, tax strategies, and the fiduciary standard.</p>
@@ -414,6 +404,20 @@
 </footer>
 
 <!-- MODALS (Pop-Ups) -->
+
+<!-- NEW: Retirement Analyzer Modal -->
+<div id="analyzerModal" class="modal-overlay" onclick="closeModal('analyzerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('analyzerModal')">✕</span>
+        <h2>Is Your Retirement Plan Designed to Outlast Inflation?</h2>
+        
+        <p>Most retirement projections fail because they rely on static, overly optimistic assumptions. At Alpha Innovation Partners, we believe next-generation planning requires next-generation stress testing.</p>
+        
+        <p>Use our proprietary, confidential <strong>Retirement Analyzer</strong> to stress-test your household nest egg, Social Security benefits, and pension income against real-world inflation and market volatility. Map your true trajectory through age 95 and receive your instant Sustainability Verdict—completely free.</p>
+        
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('analyzerModal'); window.open('https://sites.google.com/craneandassociates.net/alphainnovationpartnersretire/home', '_blank')">Try the Retirement Analyzer ➔</button>
+    </div>
+</div>
 
 <!-- Join Our Firm Modal -->
 <div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
