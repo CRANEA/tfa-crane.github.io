@@ -54,10 +54,13 @@
         /* REDESIGNED Hero Section */
         .hero { position: relative; background: linear-gradient(rgba(0, 25, 40, 0.88), rgba(0, 25, 40, 0.88)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover; padding: 120px 5% 150px 5%; text-align: center; color: #fff; z-index: 1; }
         .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
-        .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 25px; }
+        .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 30px; }
         
-        /* Updated SEC Badge to act as a Button */
-        .hero-badge { display: inline-block; background: #009b9f; color: white; padding: 12px 25px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.95rem; margin-bottom: 50px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        /* Main Screen Action Buttons Container */
+        .hero-badge-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-bottom: 50px; }
+        
+        /* Main Screen Action Buttons Styling */
+        .hero-badge { display: inline-block; width: 100%; max-width: 650px; background: #009b9f; color: white; padding: 14px 25px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .hero-badge:hover { background: #007a7d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
         /* New Hero Alliance Box */
@@ -196,8 +199,14 @@
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     
-    <!-- SEC Badge is now a clickable button -->
-    <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor Representative</button>
+    <!-- Main Screen Action Buttons Stack -->
+    <div class="hero-badge-container">
+        <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor Representative</button>
+        <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
+        
+        <!-- Future buttons can easily be pasted right here! -->
+        
+    </div>
     
     <!-- Professional Alliance Buttons Front and Center -->
     <div class="hero-alliance-box">
@@ -207,7 +216,6 @@
         <div class="button-group">
             <button class="alliance-btn light" onclick="openModal('cpaModal')">CPA Partnerships</button>
             <button class="alliance-btn outline" style="border-color: #fff; color: #fff;" onclick="openModal('allianceModal')">Professional Alliance Program Details</button>
-            <button class="alliance-btn" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
         </div>
     </div>
 
@@ -452,7 +460,6 @@
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
         </div>
 
-        <!-- Professional Alliances Master PDF -->
         <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; width: 100%; box-sizing: border-box; color: #009b9f;">📄 Read the Full Professional Alliances Document</a>
     </div>
 </div>
@@ -561,7 +568,7 @@
     </div>
 </div>
 
-<!-- NEW: SEC Modal (Filled with user content) -->
+<!-- SEC Modal -->
 <div id="secModal" class="modal-overlay" onclick="closeModal('secModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('secModal')">✕</span>
