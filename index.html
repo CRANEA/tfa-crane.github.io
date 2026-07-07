@@ -55,8 +55,11 @@
         .hero { position: relative; background: linear-gradient(rgba(0, 25, 40, 0.88), rgba(0, 25, 40, 0.88)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop') center/cover; padding: 120px 5% 150px 5%; text-align: center; color: #fff; z-index: 1; }
         .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 25px; }
-        .hero-badge { display: inline-block; background: #009b9f; color: white; padding: 8px 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.9rem; margin-bottom: 40px; }
         
+        /* Updated SEC Badge to act as a Button */
+        .hero-badge { display: inline-block; background: #009b9f; color: white; padding: 12px 25px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.95rem; margin-bottom: 50px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .hero-badge:hover { background: #007a7d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+
         /* New Hero Alliance Box */
         .hero-alliance-box { background: rgba(0, 59, 92, 0.95); padding: 40px; border-radius: 8px; max-width: 850px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); position: relative; z-index: 10; }
         .hero-alliance-box h3 { color: #fff; font-size: 2.2rem; margin-bottom: 10px; }
@@ -187,20 +190,14 @@
     </div>
 </nav>
 
-<!-- Redesigned Hero with Buttons at the Top & Scroll Arrow -->
+<!-- Redesigned Hero Section -->
 <header class="hero">
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
-    <div class="hero-badge">SEC Registered Investment Advisor Representative</div>
     
-    <!-- NEW: Main Screen Specialized Strategies Section (For Future Growth) -->
-    <div style="margin-bottom: 50px;">
-        <h3 style="color: #fff; font-family: 'Open Sans', sans-serif; font-size: 1.05rem; font-weight: 400; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase;">Specialized Planning Strategies</h3>
-        <div class="button-group">
-            <button class="alliance-btn" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
-        </div>
-    </div>
-
+    <!-- SEC Badge is now a clickable button -->
+    <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor Representative</button>
+    
     <!-- Professional Alliance Buttons Front and Center -->
     <div class="hero-alliance-box">
         <h3>Let's Collaborate</h3>
@@ -453,9 +450,8 @@
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
         </div>
 
-        <!-- CORRECTED: Added the exact file you specified for the full overview -->
+        <!-- Professional Alliances Master PDF -->
         <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; width: 100%; box-sizing: border-box; color: #009b9f;">📄 Read the Full Professional Alliances Document</a>
-
     </div>
 </div>
 
@@ -531,7 +527,7 @@
     </div>
 </div>
 
-<!-- NEW: Long-Term Care Modal (UPDATED VIDEO LINK) -->
+<!-- Long-Term Care Modal -->
 <div id="ltcModal" class="modal-overlay" onclick="closeModal('ltcModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('ltcModal')">✕</span>
@@ -560,6 +556,18 @@
         <h2>For Individuals & Families</h2>
         <p><em>Content for Individuals goes here...</em></p>
         <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<!-- NEW: SEC Modal Placeholder -->
+<div id="secModal" class="modal-overlay" onclick="closeModal('secModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('secModal')">✕</span>
+        <h2>SEC Registered Investment Advisor</h2>
+        
+        <p><em>Content coming soon! Provide your text and we will format it beautifully right here.</em></p>
+        
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('secModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
     </div>
 </div>
 
