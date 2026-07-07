@@ -56,10 +56,10 @@
         .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 40px; }
         
-        /* UPDATED: Main Screen Action Buttons Container (2x2 Grid) */
+        /* Main Screen Action Buttons Container (2x2 Grid) */
         .hero-badge-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 900px; margin: 0 auto 50px auto; }
         
-        /* UPDATED: Main Screen Action Buttons Styling */
+        /* Main Screen Action Buttons Styling */
         .hero-badge { flex: 1 1 calc(50% - 15px); min-width: 300px; background: #009b9f; color: white; padding: 16px 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .hero-badge:hover { background: #007a7d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
@@ -199,13 +199,11 @@
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     
-    <!-- UPDATED: Main Screen Action Buttons Stack (Now a 2x2 Grid) -->
+    <!-- Main Screen Action Buttons Stack (Now a 2x2 Grid) -->
     <div class="hero-badge-container">
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
         <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Simulator</button>
-        
-        <!-- NEW: Opens the explanatory modal first before the Google Site -->
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
     </div>
     
@@ -405,7 +403,7 @@
 
 <!-- MODALS (Pop-Ups) -->
 
-<!-- NEW: Retirement Analyzer Modal -->
+<!-- Retirement Analyzer Modal -->
 <div id="analyzerModal" class="modal-overlay" onclick="closeModal('analyzerModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('analyzerModal')">✕</span>
@@ -516,7 +514,18 @@
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
         <h2>For Business Brokers</h2>
-        <p><em>Content for Business Brokers goes here...</em></p>
+        
+        <p>Maximize the value you bring to the table during a client's exit. By integrating wealth architecture into the sale of a business, we help business owners mitigate capital gains taxes and structure a reliable post-sale income stream.</p>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="BusinessBrokers_The_Wealth_Integrated_Exit.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Integrated Exit</a>
+            <a href="BusinessOwnersGuide%20to%20wealthPreservnation.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Preservation Guide</a>
+        </div>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/81R0ObxhTZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
         <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('brokerModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
 </div>
@@ -546,6 +555,17 @@
         <img src="California_Medicare_Agent_Compensation_Comparison.png" alt="Medicare Agent Compensation Comparison" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
         
         <p>Elevate your practice by partnering with a fully licensed fiduciary. We help you seamlessly integrate comprehensive wealth management into your existing health and Medicare client base.</p>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="healthcare-alliance-brochure.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Healthcare Alliance Brochure</a>
+        </div>
+
+        <div style="margin: 25px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea;">
+            <video width="100%" controls preload="metadata" style="display: block;">
+                <source src="MedicareAgents.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
         <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('medicareModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
