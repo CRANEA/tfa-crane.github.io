@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Plan Tax Simulator</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Recharts Dependencies -->
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+    <script src="https://unpkg.com/recharts@2.1.9/umd/Recharts.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useMemo, useEffect } = React;
+        const { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip: RechartsTooltip, Legend, ResponsiveContainer } = window.Recharts;
+
+        // 2026 IRS Limits (Estimates based on current law & SECURE 2.0)
+        const LIMITS_2026 = {
+            COMP_CAP: 360000,
+            K401_BASE: 24500,
+            CATCH_UP_50: 8000,
+            CATCH_UP_60: 11250,
+            EMPLOYEE_COST_PCT: 0.075 // 7.5% blended cost for safe harbor + cross-testing gateway
+        };
+
+        const formatCurrency = (val) => {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val || 0);
+        };
+
+        function App() {
+            // Application State
+            const [fedTax, setFedTax] = useState(32);
+            const [stateTax, setStateTax] = useState(8);
+            const [logoSrc, setLogoSrc] = useState("logo.png"); // Look for logo.png
+            
+            const [census, setCensus] = useState([
+                { id: '1', name: 'Owner / Partner 1', isOwner: true, age: 52, income: 360000, planType: 'cb' },
+                { id: '2', name: 'Employee 1', isOwner: false, age: 35, income: 75000 },
+                { id: '3', name: 'Employee 2', isOwner: false, age: 28, income: 55000 },
+                { id: '4', name: 'Employee 3', isOwner: false, age: 41, income: 90000 },
+            ]);
+
+            // Initialize Lucide icons after render
+            useEffect(() => {
+                lucide.createIcons();
+            });
+
+            const calculations = useMemo(() => {
+                let totalOwnerContribution = 0;
+                let totalEmployeeCost = 0;
+                let totalOwner401k = 0;
+                let totalOwnerPS = 0;
+                let totalOwnerDB = 0; 
+                
+                const breakdown = census.map(person => {
+                    const cappedIncome = Math.min(Number(person.income) || 0, LIMITS_2026.COMP_CAP);
+                    const age = Number(person.age) || 0;
+                    
+                    if (person.isOwner) {
+                        // 1. 401(k) Tier
+                        let k401 = LIMITS_2026.K401_BASE;
+                        if (age >= 60) k401 += LIMITS_2026.CATCH_UP_60;
+                        else if (age >= 50) k401 += LIMITS_2026.CATCH_UP_50;
+                        
+                        // 2. Profit Sharing Tier (Restricted to 6% under 404(a)(7) combo rules)
+                        let ps = cappedIncome * 0.06;
+                        
+                        // 3. Defined Benefit Tier (Cash Balance or 412(e)(3))
+                        let db = 0;
+                        if (person.planType === '412e3') {
+                            // 412(e)(3) Proxy
+                            db = 100000 * Math.exp(0.055 * Math.max(0, age - 30));
+                            db = Math.min(db, 600000); 
+                        } else {
+                            // Standard Cash Balance Proxy
+                            db = 50000 * Math.exp(0.0594 * Math.max(0, age - 30));
+                            db = Math.min(db, 450000); 
+                            db = Math.min(db, cappedIncome);
+                        }
+
+                        const total = k401 + ps + db;
+                        
+                        totalOwner401k += k401;
+                        totalOwnerPS += ps;
+                        totalOwnerDB += db;
+                        totalOwnerContribution += total;
+
+                        return { ...person, k401, ps, db, total, cost: 0 };
+                    } else {
+                        // Employees: Actuarial cost of admission
+                        const cost = (Number(person.income) || 0) * LIMITS_2026.EMPLOYEE_COST_PCT;
+                        totalEmployeeCost += cost;
+                        
+                        return { ...person, k401: 0, ps: 0, cb: 0, total: cost, cost };
+                    }
+                });
+
+                const totalDeduction = totalOwnerContribution + totalEmployeeCost;
+                const combinedTaxRate = ((Number(fedTax) || 0) + (Number(stateTax) || 0)) / 100;
+                const taxSavings = totalDeduction * combinedTaxRate;
+                const netBenefit = taxSavings - totalEmployeeCost;
+                const ownerPercentage = totalDeduction > 0 ? (totalOwnerContribution / totalDeduction) * 100 : 0;
+
+                const chartData = [
+                    {
+                        name: 'Fund Allocation',
+                        'Owner 401(k)': totalOwner401k,
+                        'Owner Profit Sharing': totalOwnerPS,
+                        'Owner Defined Benefit': totalOwnerDB,
+                        'Cost of Employees': totalEmployeeCost
+                    }
+                ];
+
+                return {
+                    totalOwnerContribution,
+                    totalEmployeeCost,
+                    totalDeduction,
+                    taxSavings,
+                    netBenefit,
+                    ownerPercentage,
+                    breakdown,
+                    chartData,
+                    combinedTaxRate: combinedTaxRate * 100
+                };
+            }, [census, fedTax, stateTax]);
+
+            const addPerson = (isOwner) => {
+                const newId = Math.random().toString(36).substr(2, 9);
+                setCensus([...census, { 
+                    id: newId, 
+                    name: isOwner ? `Owner ${census.filter(p => p.isOwner).length + 1}` : `Employee ${census.filter(p => !p.isOwner).length + 1}`, 
+                    isOwner, 
+                    age: isOwner ? 50 : 35, 
+                    income: isOwner ? 250000 : 60000,
+                    planType: isOwner ? 'cb' : undefined
+                }]);
+            };
+
+            const removePerson = (id) => {
+                setCensus(census.filter(p => p.id !== id));
+            };
+
+            const updatePerson = (id, field, value) => {
+                setCensus(census.map(p => p.id === id ? { ...p, [field]: value } : p));
+            };
+
+            return (
+                <div className="min-h-screen p-4 md:p-8 font-sans text-slate-800">
+                    <div className="max-w-7xl mx-auto space-y-6">
+                        
+                        {/* Header Area */}
+                        <div className="flex items-center justify-between bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                            <div>
+                                <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                                    <i data-lucide="calculator" className="w-7 h-7 text-blue-600"></i>
+                                    Combo Plan Tax Simulator (2026)
+                                </h1>
+                                <p className="text-slate-500 mt-1">
+                                    Calculate maximum owner contributions and ROI using 401(k), Profit Sharing, and Defined Benefit cross-testing.
+                                </p>
+                            </div>
+                            
+                            {/* Company Logo added to Top Right */}
+                            <div className="hidden sm:block ml-4 shrink-0">
+                                <img 
+                                    src={logoSrc} 
+                                    alt="Alpha Innovation Partners Logo" 
+                                    className="h-16 object-contain"
+                                    onError={() => setLogoSrc("https://placehold.co/200x60/f8fafc/64748b?text=Logo+Not+Found")}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Quick Instructions Panel */}
+                        <div className="bg-blue-50 border border-blue-200 p-5 rounded-xl shadow-sm">
+                            <h3 className="text-blue-900 font-bold mb-2 flex items-center gap-2">
+                                <i data-lucide="info" className="w-5 h-5"></i>
+                                How to use this simulator:
+                            </h3>
+                            <ol className="list-decimal list-inside space-y-1 text-blue-800 text-sm">
+                                <li><strong>Set your Tax Rates:</strong> Adjust your Federal and State marginal tax rates to calculate accurate savings.</li>
+                                <li><strong>Build your Census-</strong> there is space for one owner and three employees below (Use the <em>+ Add Staff</em> and <em>+Add Owner</em> to build your company profile).</li>
+                                <li><strong>Enter Data:</strong> Input the Age and expected 2026 W-2 Income (up to the $360,000 IRS cap) for each person.</li>
+                                <li><strong>Review Results:</strong> The Dashboard will instantly calculate your total deductions, required staff funding, and net tax savings!</li>
+                            </ol>
+                        </div>
+
+                        {}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-blue-500">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-sm font-medium text-slate-500">Total Owner Contribution</p>
+                                        <h3 className="text-2xl font-bold text-slate-900 mt-1">{formatCurrency(calculations.totalOwnerContribution)}</h3>
+                                    </div>
+                                    <i data-lucide="piggy-bank" className="w-5 h-5 text-blue-500 opacity-80"></i>
+                                </div>
+                                <p className="text-xs text-slate-400 mt-2">To owner's personal accounts</p>
+                            </div>
+
+                            <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-slate-400">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-sm font-medium text-slate-500">Employee Funding Cost</p>
+                                        <h3 className="text-2xl font-bold text-slate-900 mt-1">{formatCurrency(calculations.totalEmployeeCost)}</h3>
+                                    </div>
+                                    <i data-lucide="users" className="w-5 h-5 text-slate-500 opacity-80"></i>
+                                </div>
+                                <p className="text-xs text-slate-400 mt-2">Required for IRS cross-testing</p>
+                            </div>
+
+                            <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-200 border-l-4 border-l-emerald-500">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-sm font-medium text-slate-500">Estimated Tax Savings</p>
+                                        <h3 className="text-2xl font-bold text-slate-900 mt-1">{formatCurrency(calculations.taxSavings)}</h3>
+                                    </div>
+                                    <i data-lucide="dollar-sign" className="w-5 h-5 text-emerald-500 opacity-80"></i>
+                                </div>
+                                <p className="text-xs text-slate-400 mt-2">At {calculations.combinedTaxRate.toFixed(1)}% combined tax rate</p>
+                            </div>
+
+                            <div className="bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-700 text-white relative overflow-hidden">
+                                <div className="absolute -right-4 -bottom-4 opacity-10">
+                                    <i data-lucide="trending-up" className="w-32 h-32"></i>
+                                </div>
+                                <div className="relative z-10">
+                                    <p className="text-sm font-medium text-slate-300">Net Financial Benefit</p>
+                                    <h3 className="text-2xl font-bold text-white mt-1">{formatCurrency(calculations.netBenefit)}</h3>
+                                    <p className="text-xs text-emerald-400 mt-2 font-medium">
+                                        (Tax Savings minus Employee Cost)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            
+                            {/* Left Column: Inputs */}
+                            <div className="lg:col-span-2 space-y-6">
+                                
+                                {/* Tax Settings */}
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                                    <h2 className="text-lg font-bold text-slate-800 mb-4 border-b pb-2">Tax Assumptions</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Federal Marginal Tax Rate (%)</label>
+                                            <input 
+                                                type="number" 
+                                                value={fedTax} 
+                                                onChange={(e) => setFedTax(e.target.value)}
+                                                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">State Marginal Tax Rate (%)</label>
+                                            <input 
+                                                type="number" 
+                                                value={stateTax} 
+                                                onChange={(e) => setStateTax(e.target.value)}
+                                                className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Census Editor */}
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                                    <div className="flex justify-between items-center mb-4 border-b pb-2">
+                                        <h2 className="text-lg font-bold text-slate-800">Company Census</h2>
+                                        <div className="flex gap-2">
+                                            <button onClick={() => addPerson(false)} className="flex items-center gap-1 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-md transition-colors">
+                                                <i data-lucide="plus" className="w-4 h-4"></i> Add Staff
+                                            </button>
+                                            <button onClick={() => addPerson(true)} className="flex items-center gap-1 text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1.5 rounded-md transition-colors">
+                                                <i data-lucide="plus" className="w-4 h-4"></i> Add Owner
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left border-collapse">
+                                            <thead>
+                                                <tr className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
+                                                    <th className="p-3 font-medium rounded-tl-md">Name / Role</th>
+                                                    <th className="p-3 font-medium">Status</th>
+                                                    <th className="p-3 font-medium w-24">Age</th>
+                                                    <th className="p-3 font-medium w-40">W-2 Income</th>
+                                                    <th className="p-3 font-medium w-48">DB Plan Type</th>
+                                                    <th className="p-3 font-medium rounded-tr-md w-12"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100">
+                                                {census.map(person => (
+                                                    <tr key={person.id} className="hover:bg-slate-50 transition-colors">
+                                                        <td className="p-2">
+                                                            <input 
+                                                                type="text" 
+                                                                value={person.name} 
+                                                                onChange={(e) => updatePerson(person.id, 'name', e.target.value)}
+                                                                className="w-full px-2 py-1.5 border border-slate-200 rounded-md focus:outline-none focus:border-blue-500 font-medium"
+                                                            />
+                                                        </td>
+                                                        <td className="p-2">
+                                                            <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-medium ${person.isOwner ? 'bg-blue-100 text-blue-800' : 'bg-slate-100 text-slate-600'}`}>
+                                                                {person.isOwner ? 'Owner' : 'Employee'}
+                                                            </span>
+                                                        </td>
+                                                        <td className="p-2">
+                                                            <input 
+                                                                type="number" 
+                                                                value={person.age} 
+                                                                onChange={(e) => updatePerson(person.id, 'age', e.target.value)}
+                                                                className="w-full px-2 py-1.5 border border-slate-200 rounded-md focus:outline-none focus:border-blue-500"
+                                                            />
+                                                        </td>
+                                                        <td className="p-2">
+                                                            <div className="relative">
+                                                                <span className="absolute left-2 top-1.5 text-slate-400">$</span>
+                                                                <input 
+                                                                    type="number" 
+                                                                    value={person.income} 
+                                                                    onChange={(e) => updatePerson(person.id, 'income', e.target.value)}
+                                                                    className="w-full pl-6 pr-2 py-1.5 border border-slate-200 rounded-md focus:outline-none focus:border-blue-500"
+                                                                />
+                                                            </div>
+                                                        </td>
+                                                        <td className="p-2">
+                                                            {person.isOwner ? (
+                                                                <select
+                                                                    value={person.planType || 'cb'}
+                                                                    onChange={(e) => updatePerson(person.id, 'planType', e.target.value)}
+                                                                    className="w-full px-2 py-1.5 border border-slate-200 rounded-md focus:outline-none focus:border-blue-500 text-sm bg-white"
+                                                                >
+                                                                    <option value="cb">Cash Balance</option>
+                                                                    <option value="412e3">412(e)(3) Fully Insured</option>
+                                                                </select>
+                                                            ) : (
+                                                                <span className="text-slate-400 text-sm px-2">N/A</span>
+                                                            )}
+                                                        </td>
+                                                        <td className="p-2 text-center">
+                                                            <button 
+                                                                onClick={() => removePerson(person.id)}
+                                                                className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-md transition-colors"
+                                                            >
+                                                                <i data-lucide="trash-2" className="w-4 h-4"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                        {census.length === 0 && (
+                                            <div className="text-center py-8 text-slate-500 text-sm">
+                                                No census data. Add an owner or employee to begin.
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {}
+                            {/* Right Column: Visualizations & Output */}
+                            <div className="space-y-6">
+                                
+                                {/* Fund Allocation Chart */}
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                                    <h2 className="text-lg font-bold text-slate-800 mb-4 border-b pb-2">Plan Allocation</h2>
+                                    <div className="h-64 w-full">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <BarChart data={calculations.chartData} margin={{ top: 20, right: 0, left: 20, bottom: 0 }}>
+                                                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                                                <XAxis dataKey="name" hide />
+                                                <YAxis tickFormatter={(val) => `$${val / 1000}k`} stroke="#64748b" fontSize={12} />
+                                                <RechartsTooltip 
+                                                    formatter={(value) => formatCurrency(value)}
+                                                    cursor={{fill: 'transparent'}}
+                                                    contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
+                                                />
+                                                <Legend iconType="circle" wrapperStyle={{fontSize: '12px'}} />
+                                                <Bar dataKey="Owner Defined Benefit" stackId="a" fill="#3b82f6" radius={[0,0,4,4]} />
+                                                <Bar dataKey="Owner Profit Sharing" stackId="a" fill="#60a5fa" />
+                                                <Bar dataKey="Owner 401(k)" stackId="a" fill="#93c5fd" />
+                                                <Bar dataKey="Cost of Employees" stackId="a" fill="#94a3b8" radius={[4,4,0,0]} />
+                                            </BarChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <div className="mt-4 bg-blue-50 p-3 rounded-lg border border-blue-100 flex items-start gap-2">
+                                        <i data-lucide="info" className="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                                        <p className="text-sm text-blue-800">
+                                            <strong>{calculations.ownerPercentage.toFixed(1)}%</strong> of the total tax-deductible contributions are going directly to the business owner(s).
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Contribution Breakdown */}
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                                    <h2 className="text-lg font-bold text-slate-800 mb-4 border-b pb-2">Owner Plan Breakdown</h2>
+                                    <div className="space-y-4">
+                                        {calculations.breakdown.filter(p => p.isOwner).map((owner, idx) => (
+                                            <div key={idx} className="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                                <h3 className="font-semibold text-slate-800 mb-3">{owner.name}</h3>
+                                                <div className="space-y-2 text-sm">
+                                                    <div className="flex justify-between">
+                                                        <span className="text-slate-500">401(k) + Catch-up:</span>
+                                                        <span className="font-medium text-slate-700">{formatCurrency(owner.k401)}</span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-slate-500">Profit Sharing (Max 6%):</span>
+                                                        <span className="font-medium text-slate-700">{formatCurrency(owner.ps)}</span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-slate-500">{owner.planType === '412e3' ? '412(e)(3) (Estimated):' : 'Cash Balance (Actuarial):'}</span>
+                                                        <span className="font-medium text-slate-700">{formatCurrency(owner.db)}</span>
+                                                    </div>
+                                                    <div className="pt-2 mt-2 border-t border-slate-200 flex justify-between font-bold text-blue-700">
+                                                        <span>Total Contribution:</span>
+                                                        <span>{formatCurrency(owner.total)}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        
+                                        {calculations.breakdown.filter(p => p.isOwner).length === 0 && (
+                                            <div className="text-sm text-slate-500 italic">No owners in census.</div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
