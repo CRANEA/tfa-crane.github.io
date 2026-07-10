@@ -7,21 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <script>
-        window.openModal = function(id) {
-            var modal = document.getElementById(id);
-            if (modal) {
-                modal.style.display = 'flex';
-            }
-        };
-        window.closeModal = function(id) {
-            var modal = document.getElementById(id);
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        };
-    </script>
 
     <style>
         /* CSS Reset & Typography */
@@ -409,4 +394,301 @@
         <span class="modal-close" onclick="closeModal('probateModal')">✕</span>
         <h2>Avoid Probate & Estate Planning</h2>
         <p>Discover how to protect your assets and ensure a seamless transfer of wealth to your heirs without the interference of probate court.</p>
-        <a href="The_Estate_Blueprint_.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b
+        <a href="The_Estate_Blueprint_.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Estate Blueprint</a>
+    </div>
+</div>
+
+<div id="specialNeedsModal" class="modal-overlay" onclick="closeModal('specialNeedsModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('specialNeedsModal')">✕</span>
+        <h2>Planning for a Special Needs Family Member</h2>
+        <p>Ensure your loved ones are financially secure without jeopardizing their eligibility for essential government benefits.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/Tko3UXFuT6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <a href="The_Special_Needs_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Special Needs Blueprint</a>
+    </div>
+</div>
+
+<div id="businessSolutionsModal" class="modal-overlay" onclick="closeModal('businessSolutionsModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('businessSolutionsModal')">✕</span>
+        <h2>Business Solutions & Executive Compensation</h2>
+        <p>Explore advanced strategies for rewarding key employees and optimizing your corporate financial structure.</p>
+        <a href="Executive-Bonus.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Executive Bonus Strategy</a>
+    </div>
+</div>
+
+<div id="investModal" class="modal-overlay" onclick="closeModal('investModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('investModal')">✕</span>
+        <h2>Invest Without Capital Gains Tax</h2>
+        <p>Learn how to deploy institutional-grade wealth strategies to grow your assets while legally shielding them from capital gains tax.</p>
+        <a href="The_Institutional_Blueprint_AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Institutional Wealth Blueprint</a>
+    </div>
+</div>
+
+<div id="retirementIncomeModal" class="modal-overlay" onclick="closeModal('retirementIncomeModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('retirementIncomeModal')">✕</span>
+        <h2>Retirement Income Strategy</h2>
+        <p>Build a resilient, inflation-adjusted income stream that is designed to last exactly as long as you do.</p>
+        <a href="The_Retirement_Income_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Retirement Income Blueprint</a>
+    </div>
+</div>
+
+<div id="analyzerModal" class="modal-overlay" onclick="closeModal('analyzerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('analyzerModal')">✕</span>
+        <h2>Is Your Retirement Plan Designed to Outlast Inflation?</h2>
+        
+        <p>Most retirement projections fail because they rely on static, overly optimistic assumptions. At Alpha Innovation Partners, we believe next-generation planning requires next-generation stress testing.</p>
+        
+        <p>Use our proprietary, confidential <strong>Retirement Analyzer</strong> to stress-test your household nest egg, Social Security benefits, and pension income against real-world inflation and market volatility. Map your true trajectory through age 95 and receive your instant Sustainability Verdict—completely free.</p>
+        
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('analyzerModal'); window.open('https://sites.google.com/craneandassociates.net/alphainnovationpartnersretire/home', '_blank')">Try the Retirement Analyzer ➔</button>
+    </div>
+</div>
+
+<div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
+        <h2>Join Our Firm</h2>
+        <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+            <a href="Your%20Opportunity%20for%20Your%20Future.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Your Opportunity for Your Future</a>
+            <a href="The_Professional_Alliance_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: The Professional Alliance Blueprint</a>
+        </div>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/bUX__dx4ijg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('recruitingModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Submit a Confidential Inquiry</button>
+    </div>
+</div>
+
+<div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
+        <h2>For CPAs & Tax Professionals</h2>
+        
+        <img src="CPA%20The_White-Glove_Fiduciary_Alliance.png" alt="CPA Alliance" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;">
+        
+        <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
+        <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
+            <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Professional Alliance Program</a>
+            <a href="CPA%20The_White-Glove_Fiduciary_Alliance.png" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">🖼️ View Alliance Chart</a>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
+        <h2>Professional Alliance Program</h2>
+        <p>Welcome to our exclusive program for specialized professionals. We handle the complex institutional investment strategies and fiduciary oversight, allowing you to provide immense value without adding overhead to your practice.</p>
+        <p><strong>Select your specific profession below to learn more:</strong></p>
+        
+        <div class="sub-button-grid">
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('eaModal')">Enrolled Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('reModal')">Residential & Commercial Real Estate Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('medicareModal')">Medicare & Health Agents</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
+        </div>
+
+        <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; width: 100%; box-sizing: border-box; color: #009b9f;">📄 Read the Full Professional Alliances Document</a>
+    </div>
+</div>
+
+<div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
+        <h2>For Enrolled Agents</h2>
+        
+        <img src="EA.png" alt="Enrolled Agents Alliance" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        
+        <p>Expand your tax practice by partnering with a fully licensed fiduciary to offer comprehensive wealth management solutions.</p>
+        
+        <a href="EA.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-bottom: 25px; box-sizing: border-box; color: #009b9f;">📄 Download EA Partnership Guide</a>
+        
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('eaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('reModal')">✕</span>
+        <h2>For Residential & Commercial Real Estate Agents</h2>
+        
+        <p>Welcome to our professional alliance program tailored specifically for Residential and Commercial Real Estate Agents. Integrate wealth architecture into your real estate practice. <strong>Watch the video below to learn more:</strong></p>
+        
+        <div class="video-wrapper" style="margin: 20px 0 25px 0;">
+            <iframe src="https://www.youtube.com/embed/8Kv3ss8Z8eY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="RealEstatePA.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Real Estate Alliance Guide</a>
+            <a href="RealEsateAgents%20The_Wealth_Architecture_Alliance.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Architecture Alliance</a>
+        </div>
+        
+        <img src="CommericalREAgents2.png" alt="Commercial Real Estate Agents" style="max-width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        <img src="Luxury_Listing_Tax_Strategy.png" alt="Luxury Listing Tax Strategy" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('reModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
+        <h2>For Business Brokers</h2>
+        
+        <p>Maximize the value you bring to the table during a client's exit. By integrating wealth architecture into the sale of a business, we help business owners mitigate capital gains taxes and structure a reliable post-sale income stream.</p>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="BusinessBrokers_The_Wealth_Integrated_Exit.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Integrated Exit</a>
+            <a href="BusinessOwnersGuide%20to%20wealthPreservnation.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Preservation Guide</a>
+        </div>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/81R0ObxhTZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('brokerModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
+        <h2>For Bookkeepers</h2>
+        <p>Elevate your bookkeeping practice into a comprehensive advisory revenue center through our strategic partnership.</p>
+        
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="Strategic_Bookkeeping_Transformation.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Strategic Bookkeeping Transformation</a>
+            <a href="Transforming_Bookkeeping_into_Advisory_Revenue_(2).pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Transforming into Advisory Revenue</a>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('bookkeeperModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="medicareModal" class="modal-overlay" onclick="closeModal('medicareModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('medicareModal')">✕</span>
+        <h2>For Medicare & Group Health Agents</h2>
+        
+        <img src="California_Medicare_Agent_Compensation_Comparison.png" alt="Medicare Agent Compensation Comparison" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
+        
+        <p>Elevate your practice by partnering with a fully licensed fiduciary. We help you seamlessly integrate comprehensive wealth management into your existing health and Medicare client base.</p>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="healthcare-alliance-brochure.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Healthcare Alliance Brochure</a>
+        </div>
+
+        <div style="margin: 25px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea;">
+            <video width="100%" controls preload="metadata" style="display: block;">
+                <source src="MedicareAgents.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('medicareModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
+    </div>
+</div>
+
+<div id="ltcModal" class="modal-overlay" onclick="closeModal('ltcModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('ltcModal')">✕</span>
+        <h2>Long-Term Care & Asset Protection</h2>
+
+        <p>While often referred to as Long-Term Care planning, we approach this as true <strong>Asset Protection</strong>. A sudden health event shouldn't derail a lifetime of wealth accumulation. We design sophisticated strategies to shield your portfolio and preserve your legacy while ensuring you have access to the highest quality of care.</p>
+
+        <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="LTC%20PRIMER.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: LTC Primer</a>
+            <a href="LTC_Wealth_Shield_Strategy.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Shield Strategy</a>
+        </div>
+
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/49gFU1dEw2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('ltcModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
+        <h2>For Individuals & Families</h2>
+        <p><em>Content for Individuals goes here...</em></p>
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div id="secModal" class="modal-overlay" onclick="closeModal('secModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('secModal')">✕</span>
+        <h2>What is an Investment Advisor Representative (IAR)?</h2>
+        
+        <p>If you are looking for financial help, you will likely encounter a variety of titles: financial advisor, wealth manager, broker, or insurance agent. To the average investor, these titles all sound the same. However, not all financial professionals operate under the same rules, and they are not all held to the same legal standards.</p>
+        
+        <p>As an <strong>Investment Advisor Representative (IAR)</strong>, I hold a specific legal designation that sets my practice apart from the vast majority of people working in the financial industry.</p>
+        
+        <h3>A Select Group with a Higher Level of Knowledge</h3>
+        <p>The financial services industry is massive, employing millions of people across banks, insurance agencies, and traditional brokerage firms. Out of all the individuals selling financial products, only a small percentage hold the formal IAR designation.</p>
+        <p>To earn this title, an advisor must pass rigorous state or federal licensing exams that test a deep understanding of economics, complex investment vehicles, retirement planning, and strict ethical guidelines. When you work with an IAR, you are collaborating with a professional who has demonstrated a uniquely high level of technical knowledge and dedication to the true craft of investment advising, rather than just sales.</p>
+        
+        <h3>The Fiduciary Difference: Your Interests Come First</h3>
+        <p>The most important distinction of an IAR is how we are legally required to treat you. As an IAR, I am legally bound to provide <strong>fiduciary advice</strong>.</p>
+        
+        <ul>
+            <li><strong>Working with an IAR (Fiduciary):</strong> I am legally obligated to act in your absolute best interest at all times. My recommendations must be driven entirely by what will benefit your financial future the most, complete with full transparency regarding fees and no hidden agendas.</li>
+            <li><strong>Working with a non-IAR:</strong> Many other individuals in the financial industry are not legally required to work as fiduciaries. Instead, they often operate under a lesser standard. This means they are legally allowed to recommend a financial product that is simply "okay" for you, even if a better, lower-cost option exists, because the product they recommend pays them a higher commission.</li>
+        </ul>
+        
+        <h3>Why This Matters to You</h3>
+        <p>When it comes to your life savings, trust should not be a guessing game. Choosing to work with an Investment Advisor Representative means choosing peace of mind. It means knowing that the advice you receive is objective, highly informed, and tailored entirely to your success.</p>
+        <p>You deserve a financial partner who sits on the same side of the table as you—and as an IAR, that is exactly what I am legally bound to do.</p>
+        
+        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('secModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+    </div>
+</div>
+
+<div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
+    <div class="chat-heads">
+        <img src="avi-photo.jpg" alt="Avi Crane">
+    </div>
+    <div class="chat-text">Got any questions? I am happy to help.</div>
+</div>
+
+<script>
+    function openModal(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'flex';
+        }
+    }
+    
+    function closeModal(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
