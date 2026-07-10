@@ -203,7 +203,10 @@
     <div class="hero-badge-container">
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
-        <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Simulator</button>
+        
+        <!-- UPDATED: Business Owner Button -->
+        <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Retirement Plan Simulator</button>
+        
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
     </div>
     
@@ -275,6 +278,18 @@
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/QVg_lL0xMYk" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nMdDw5RZYZw" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ldlmw-nwsI8" allowfullscreen></iframe></div>
+        </div>
+
+        <!-- NEW: Downloadable Blueprints Button Row -->
+        <div style="margin-top: 60px; text-align: center;">
+            <h3 style="font-family: 'Playfair Display', serif; color: #003b5c; font-size: 1.8rem; margin-bottom: 25px;">Downloadable Blueprints & Strategies</h3>
+            <div class="button-group" style="gap: 15px; justify-content: center;">
+                <button class="alliance-btn outline" onclick="openModal('probateModal')">Avoid Probate</button>
+                <button class="alliance-btn outline" onclick="openModal('specialNeedsModal')">Special Need Family Member</button>
+                <button class="alliance-btn outline" onclick="openModal('businessSolutionsModal')">Business Solutions</button>
+                <button class="alliance-btn outline" onclick="openModal('investModal')">Invest W/O Cap Gain Tax</button>
+                <button class="alliance-btn outline" onclick="openModal('retirementIncomeModal')">Retirement Income</button>
+            </div>
         </div>
     </div>
 </section>
@@ -403,6 +418,67 @@
 
 <!-- MODALS (Pop-Ups) -->
 
+<!-- INSIGHTS MODALS -->
+
+<!-- Avoid Probate Modal -->
+<div id="probateModal" class="modal-overlay" onclick="closeModal('probateModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('probateModal')">✕</span>
+        <h2>Avoid Probate & Estate Planning</h2>
+        <p>Discover how to protect your assets and ensure a seamless transfer of wealth to your heirs without the interference of probate court.</p>
+        <a href="The_Estate_Blueprint_.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Estate Blueprint</a>
+    </div>
+</div>
+
+<!-- Special Need Family Member Modal -->
+<div id="specialNeedsModal" class="modal-overlay" onclick="closeModal('specialNeedsModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('specialNeedsModal')">✕</span>
+        <h2>Planning for a Special Needs Family Member</h2>
+        <p>Ensure your loved ones are financially secure without jeopardizing their eligibility for essential government benefits.</p>
+        
+        <div class="video-wrapper" style="margin: 25px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea;">
+            <video width="100%" controls preload="metadata" style="display: block;">
+                <!-- Just change INSERT_VIDEO_NAME.mp4 to your actual uploaded MP4 filename! -->
+                <source src="INSERT_VIDEO_NAME.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <a href="The_Special_Needs_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Special Needs Blueprint</a>
+    </div>
+</div>
+
+<!-- Business Solutions Modal -->
+<div id="businessSolutionsModal" class="modal-overlay" onclick="closeModal('businessSolutionsModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('businessSolutionsModal')">✕</span>
+        <h2>Business Solutions & Executive Compensation</h2>
+        <p>Explore advanced strategies for rewarding key employees and optimizing your corporate financial structure.</p>
+        <a href="Executive-Bonus.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Executive Bonus Strategy</a>
+    </div>
+</div>
+
+<!-- Invest W/O Cap Gain Tax Modal -->
+<div id="investModal" class="modal-overlay" onclick="closeModal('investModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('investModal')">✕</span>
+        <h2>Invest Without Capital Gains Tax</h2>
+        <p>Learn how to deploy institutional-grade wealth strategies to grow your assets while legally shielding them from capital gains tax.</p>
+        <a href="Institutional_Wealth_BlueprintVUL.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Institutional Wealth Blueprint</a>
+    </div>
+</div>
+
+<!-- Retirement Income Modal -->
+<div id="retirementIncomeModal" class="modal-overlay" onclick="closeModal('retirementIncomeModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('retirementIncomeModal')">✕</span>
+        <h2>Retirement Income Strategy</h2>
+        <p>Build a resilient, inflation-adjusted income stream that is designed to last exactly as long as you do.</p>
+        <a href="The_Retirement_Income_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Retirement Income Blueprint</a>
+    </div>
+</div>
+
 <!-- Retirement Analyzer Modal -->
 <div id="analyzerModal" class="modal-overlay" onclick="closeModal('analyzerModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -424,7 +500,10 @@
         <h2>Join Our Firm</h2>
         <p>We are actively expanding our team of financial professionals. Watch the video below to learn about the infrastructure, institutional strategies, and support we offer to help you seamlessly scale your practice.</p>
         
-        <a href="Your%20Opportunity%20for%20Your%20Future.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Your Opportunity for Your Future</a>
+        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+            <a href="Your%20Opportunity%20for%20Your%20Future.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Your Opportunity for Your Future</a>
+            <a href="The_Professional_Alliance_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: The Professional Alliance Blueprint</a>
+        </div>
         
         <!-- HEAVY-DUTY YOUTUBE EMBED -->
         <div class="video-wrapper" style="margin: 25px 0;">
@@ -435,7 +514,7 @@
     </div>
 </div>
 
-<!-- CPA Modal -->
+<!-- CPA Modal (UPDATED - Removed 2025 Tax PDF) -->
 <div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
@@ -447,7 +526,6 @@
         <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
         
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
-            <a href="CPA_Growth_Blueprintטוב.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 CPA Growth Blueprint</a>
             <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
             <a href="CPA%20The_White-Glove_Fiduciary_Alliance.png" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">🖼️ View Alliance Chart</a>
         </div>
@@ -501,7 +579,6 @@
         
         <p>Welcome to our professional alliance program tailored specifically for Residential and Commercial Real Estate Agents. Integrate wealth architecture into your real estate practice. <strong>Watch the video below to learn more:</strong></p>
         
-        <!-- YOUTUBE EMBED MOVED TO THE TOP -->
         <div class="video-wrapper" style="margin: 20px 0 25px 0;">
             <iframe src="https://www.youtube.com/embed/8Kv3ss8Z8eY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
