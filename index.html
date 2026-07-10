@@ -203,10 +203,7 @@
     <div class="hero-badge-container">
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
-        
-        <!-- UPDATED: Business Owner Button -->
         <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Retirement Plan Simulator</button>
-        
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
     </div>
     
@@ -280,7 +277,7 @@
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ldlmw-nwsI8" allowfullscreen></iframe></div>
         </div>
 
-        <!-- NEW: Downloadable Blueprints Button Row -->
+        <!-- Downloadable Blueprints Button Row -->
         <div style="margin-top: 60px; text-align: center;">
             <h3 style="font-family: 'Playfair Display', serif; color: #003b5c; font-size: 1.8rem; margin-bottom: 25px;">Downloadable Blueprints & Strategies</h3>
             <div class="button-group" style="gap: 15px; justify-content: center;">
@@ -437,12 +434,9 @@
         <h2>Planning for a Special Needs Family Member</h2>
         <p>Ensure your loved ones are financially secure without jeopardizing their eligibility for essential government benefits.</p>
         
-        <div class="video-wrapper" style="margin: 25px 0; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid #eaeaea;">
-            <video width="100%" controls preload="metadata" style="display: block;">
-                <!-- Just change INSERT_VIDEO_NAME.mp4 to your actual uploaded MP4 filename! -->
-                <source src="INSERT_VIDEO_NAME.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <!-- UPDATED YOUTUBE EMBED: Just swap YOUR_VIDEO_ID_HERE with the real YouTube link -->
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <a href="The_Special_Needs_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: The Special Needs Blueprint</a>
@@ -459,13 +453,13 @@
     </div>
 </div>
 
-<!-- Invest W/O Cap Gain Tax Modal -->
+<!-- Invest W/O Cap Gain Tax Modal (UPDATED FILE LINK) -->
 <div id="investModal" class="modal-overlay" onclick="closeModal('investModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('investModal')">✕</span>
         <h2>Invest Without Capital Gains Tax</h2>
         <p>Learn how to deploy institutional-grade wealth strategies to grow your assets while legally shielding them from capital gains tax.</p>
-        <a href="Institutional_Wealth_BlueprintVUL.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Institutional Wealth Blueprint</a>
+        <a href="The_Institutional_Blueprint_AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; box-sizing: border-box; color: #009b9f;">📄 Read: Institutional Wealth Blueprint</a>
     </div>
 </div>
 
@@ -514,7 +508,7 @@
     </div>
 </div>
 
-<!-- CPA Modal (UPDATED - Removed 2025 Tax PDF) -->
+<!-- CPA Modal (UPDATED - Added Professional Alliance PDF) -->
 <div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
@@ -527,6 +521,7 @@
         
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
             <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
+            <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Professional Alliance Program</a>
             <a href="CPA%20The_White-Glove_Fiduciary_Alliance.png" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">🖼️ View Alliance Chart</a>
         </div>
 
