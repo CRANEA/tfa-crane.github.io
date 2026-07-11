@@ -253,7 +253,6 @@
         <h2 class="section-title">Insights & Masterclasses</h2>
         <p class="section-subtitle">Watch our latest discussions on wealth management, tax strategies, and the fiduciary standard.</p>
         
-        <!-- UPDATED VIDEO GRID: 2 Lines of 2 Videos max constraint applied -->
         <div class="video-grid" style="max-width: 800px; margin-left: auto; margin-right: auto;">
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/diW6o2dyTmU" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/QVg_lL0xMYk" allowfullscreen></iframe></div>
@@ -584,7 +583,7 @@
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('brokerModal')">Business Brokers</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('bookkeeperModal')">Bookkeepers</button>
             <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('medicareModal')">Medicare & Health Agents</button>
-            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">Individuals</button>
+            <button class="sub-btn" onclick="closeModal('allianceModal'); openModal('individualModal')">College Students, Nurses, Medical Device Professionals</button>
         </div>
 
         <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="display: block; text-align: center; margin-top: 20px; width: 100%; box-sizing: border-box; color: #009b9f;">📄 Read the Full Professional Alliances Document</a>
@@ -624,6 +623,7 @@
             <a href="RealEsateAgents%20The_Wealth_Architecture_Alliance.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Architecture Alliance</a>
         </div>
         
+        <img src="RE%20Agemts.png" style="max-width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee;" onerror="this.style.display='none'">
         <img src="CommericalREAgents2.png" alt="Commercial Real Estate Agents" style="max-width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee;" onerror="this.style.display='none'">
         <img src="Luxury_Listing_Tax_Strategy.png" alt="Luxury Listing Tax Strategy" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
         
@@ -718,9 +718,17 @@
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
-        <h2>For Individuals & Families</h2>
-        <p><em>Content for Individuals goes here...</em></p>
-        <button class="alliance-btn" style="margin-top: 25px; width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
+        <h2>College Students, Nurses, Medical Device Professionals</h2>
+        
+        <div class="video-wrapper" style="margin: 25px 0;">
+            <iframe src="https://www.youtube.com/embed/NqqpKoPo8MQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+            <a href="Network_Income_Partnership.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Network Income Partnership</a>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('individualModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Request Consultation</button>
     </div>
 </div>
 
