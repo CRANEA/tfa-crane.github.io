@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi Crane | Infinity Financial Services</title>
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -177,19 +178,23 @@
     </div>
 </nav>
 
+<!-- Redesigned Hero Section -->
 <header class="hero">
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     
+    <!-- Main Screen Action Buttons Stack (Now a 2x2 Grid) -->
     <div class="hero-badge-container">
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
         
+        <!-- Business Owner Button -->
         <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Retirement Plan Simulator</button>
         
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
     </div>
     
+    <!-- Professional Alliance Buttons Front and Center -->
     <div class="hero-alliance-box">
         <h3>Let's Collaborate</h3>
         <p>Ready to elevate your client service model? Discover the difference between a standard referral arrangement and a true 50/50 integrated partnership. Select an option below to learn more.</p>
@@ -200,6 +205,7 @@
         </div>
     </div>
 
+    <!-- Bouncing Scroll Arrow -->
     <a href="#content-start" class="scroll-down">↓</a>
 </header>
 
@@ -244,6 +250,7 @@
     </div>
 </section>
 
+<!-- Insights & Videos Section -->
 <section style="background-color: #f9fbfb; border-bottom: 1px solid #eee; border-top: 1px solid #eee; padding: 70px 5%;">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title">Insights & Masterclasses</h2>
@@ -254,9 +261,9 @@
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/m1uVhKEi2jg" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/QVg_lL0xMYk" allowfullscreen></iframe></div>
             <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nMdDw5RZYZw" allowfullscreen></iframe></div>
-            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ldlmw-nwsI8" allowfullscreen></iframe></div>
         </div>
 
+        <!-- Downloadable Blueprints Button Row -->
         <div style="margin-top: 60px; text-align: center;">
             <h3 style="font-family: 'Playfair Display', serif; color: #003b5c; font-size: 1.8rem; margin-bottom: 25px;">Downloadable Blueprints & Strategies</h3>
             <div class="button-group" style="gap: 15px; justify-content: center;">
@@ -270,6 +277,7 @@
     </div>
 </section>
 
+<!-- The Financial Decisions Section -->
 <section class="section">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title" style="margin-bottom: 50px;">The Financial Decisions We Help You Make</h2>
@@ -331,6 +339,7 @@
     </div>
 </section>
 
+<!-- Who We Work With Grid -->
 <section class="section" style="background-color: #f9fbfb; max-width: 100%; border-top: 1px solid #eee;">
     <div style="max-width: 1250px; margin: auto;">
         <h2 class="section-title">Who We Work With</h2>
@@ -361,6 +370,7 @@
     </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact-section" class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
@@ -389,6 +399,11 @@
     </div>
 </footer>
 
+<!-- MODALS (Pop-Ups) -->
+
+<!-- INSIGHTS MODALS -->
+
+<!-- Avoid Probate Modal -->
 <div id="probateModal" class="modal-overlay" onclick="closeModal('probateModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('probateModal')">✕</span>
@@ -398,6 +413,7 @@
     </div>
 </div>
 
+<!-- Special Need Family Member Modal -->
 <div id="specialNeedsModal" class="modal-overlay" onclick="closeModal('specialNeedsModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('specialNeedsModal')">✕</span>
@@ -412,6 +428,7 @@
     </div>
 </div>
 
+<!-- Business Solutions Modal -->
 <div id="businessSolutionsModal" class="modal-overlay" onclick="closeModal('businessSolutionsModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('businessSolutionsModal')">✕</span>
@@ -421,6 +438,7 @@
     </div>
 </div>
 
+<!-- Invest W/O Cap Gain Tax Modal -->
 <div id="investModal" class="modal-overlay" onclick="closeModal('investModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('investModal')">✕</span>
@@ -430,6 +448,7 @@
     </div>
 </div>
 
+<!-- Retirement Income Modal -->
 <div id="retirementIncomeModal" class="modal-overlay" onclick="closeModal('retirementIncomeModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('retirementIncomeModal')">✕</span>
@@ -439,6 +458,7 @@
     </div>
 </div>
 
+<!-- Retirement Analyzer Modal -->
 <div id="analyzerModal" class="modal-overlay" onclick="closeModal('analyzerModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('analyzerModal')">✕</span>
@@ -452,6 +472,7 @@
     </div>
 </div>
 
+<!-- Join Our Firm Modal -->
 <div id="recruitingModal" class="modal-overlay" onclick="closeModal('recruitingModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('recruitingModal')">✕</span>
@@ -463,6 +484,7 @@
             <a href="The_Professional_Alliance_Blueprint.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: The Professional Alliance Blueprint</a>
         </div>
         
+        <!-- HEAVY-DUTY YOUTUBE EMBED -->
         <div class="video-wrapper" style="margin: 25px 0;">
             <iframe src="https://www.youtube.com/embed/bUX__dx4ijg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
@@ -471,26 +493,24 @@
     </div>
 </div>
 
+<!-- CPA Modal -->
 <div id="cpaModal" class="modal-overlay" onclick="closeModal('cpaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('cpaModal')">✕</span>
         <h2>For CPAs & Tax Professionals</h2>
         
-        <img src="CPA%20The_White-Glove_Fiduciary_Alliance.png" alt="CPA Alliance" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;">
-        
         <p>We understand that tax implications drive many wealth management decisions. By partnering directly with CPAs, we ensure that our institutional investment strategies and advanced financial planning align perfectly with your specialized tax strategies.</p>
         <p>Our <strong>Professional Alliance Program</strong> is designed to create a symbiotic relationship, allowing you to expand the value you offer to high-net-worth clients while ensuring rigorous fiduciary oversight across their entire financial picture.</p>
         
         <div style="display: flex; gap: 15px; margin-top: 20px; margin-bottom: 25px; flex-wrap: wrap;">
-            <a href="CPA_Strategic_Alliance_Wealth_IntegrationAC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Integration</a>
             <a href="Professional-Alliances-AC.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Professional Alliance Program</a>
-            <a href="CPA%20The_White-Glove_Fiduciary_Alliance.png" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">🖼️ View Alliance Chart</a>
         </div>
 
         <button class="alliance-btn" style="width: 100%; max-width: 100%;" onclick="closeModal('cpaModal'); document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">Partner With Avi</button>
     </div>
 </div>
 
+<!-- THE MAIN HUB: Professional Alliance Modal -->
 <div id="allianceModal" class="modal-overlay" onclick="closeModal('allianceModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('allianceModal')">✕</span>
@@ -511,6 +531,7 @@
     </div>
 </div>
 
+<!-- Enrolled Agents Modal -->
 <div id="eaModal" class="modal-overlay" onclick="closeModal('eaModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('eaModal')">✕</span>
@@ -526,6 +547,7 @@
     </div>
 </div>
 
+<!-- Real Estate Agents Modal -->
 <div id="reModal" class="modal-overlay" onclick="closeModal('reModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('reModal')">✕</span>
@@ -549,6 +571,7 @@
     </div>
 </div>
 
+<!-- Business Brokers Modal -->
 <div id="brokerModal" class="modal-overlay" onclick="closeModal('brokerModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('brokerModal')">✕</span>
@@ -569,6 +592,7 @@
     </div>
 </div>
 
+<!-- Bookkeepers Modal -->
 <div id="bookkeeperModal" class="modal-overlay" onclick="closeModal('bookkeeperModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('bookkeeperModal')">✕</span>
@@ -584,6 +608,7 @@
     </div>
 </div>
 
+<!-- Medicare & Health Agents Modal -->
 <div id="medicareModal" class="modal-overlay" onclick="closeModal('medicareModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('medicareModal')">✕</span>
@@ -608,6 +633,7 @@
     </div>
 </div>
 
+<!-- Long-Term Care Modal -->
 <div id="ltcModal" class="modal-overlay" onclick="closeModal('ltcModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('ltcModal')">✕</span>
@@ -620,6 +646,7 @@
             <a href="LTC_Wealth_Shield_Strategy.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Read: Wealth Shield Strategy</a>
         </div>
 
+        <!-- YOUTUBE EMBED -->
         <div class="video-wrapper" style="margin: 25px 0;">
             <iframe src="https://www.youtube.com/embed/49gFU1dEw2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
@@ -628,6 +655,7 @@
     </div>
 </div>
 
+<!-- Individuals Modal -->
 <div id="individualModal" class="modal-overlay" onclick="closeModal('individualModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('individualModal')">✕</span>
@@ -637,6 +665,7 @@
     </div>
 </div>
 
+<!-- SEC Modal -->
 <div id="secModal" class="modal-overlay" onclick="closeModal('secModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('secModal')">✕</span>
@@ -666,6 +695,7 @@
     </div>
 </div>
 
+<!-- Chat Widget -->
 <div class="chat-widget" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
     <span class="close-chat" onclick="event.stopPropagation(); this.parentElement.style.display='none';">✕</span>
     <div class="chat-heads">
@@ -674,6 +704,7 @@
     <div class="chat-text">Got any questions? I am happy to help.</div>
 </div>
 
+<!-- THE JAVASCRIPT ENGINE (Moved to the bottom for reliability) -->
 <script>
     function openModal(id) {
         var modal = document.getElementById(id);
