@@ -40,12 +40,16 @@
         .hero h1 { color: #fff; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; max-width: 900px; margin-left: auto; margin-right: auto; }
         .hero p.subtitle { font-size: 1.25rem; max-width: 800px; margin: 0 auto; font-weight: 300; letter-spacing: 0.5px; margin-bottom: 40px; }
         
-        /* Main Screen Action Buttons Container (2x2 Grid) */
+        /* Main Screen Action Buttons Container */
         .hero-badge-container { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 900px; margin: 0 auto 50px auto; }
         
         /* Main Screen Action Buttons Styling */
         .hero-badge { flex: 1 1 calc(50% - 15px); min-width: 300px; background: #009b9f; color: white; padding: 16px 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .hero-badge:hover { background: #007a7d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+
+        /* Highlighted Capital Gains Button */
+        .hero-badge.highlight { background: #003b5c; border: 2px solid #009b9f; }
+        .hero-badge.highlight:hover { background: #00263c; border-color: #fff; }
 
         /* New Hero Alliance Box */
         .hero-alliance-box { background: rgba(0, 59, 92, 0.95); padding: 40px; border-radius: 8px; max-width: 850px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); position: relative; z-index: 10; }
@@ -128,6 +132,7 @@
         .form-container { background: #fff; padding: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); max-width: 800px; margin: auto; border-top: 5px solid #003b5c; }
         .input-group { margin-bottom: 25px; }
         input { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-size: 1rem; background: #fafafa; }
+        select { width: 100%; padding: 18px; border: 1px solid #e1e1e1; font-size: 1rem; background: #fafafa; border-radius: 4px; }
         button[type="submit"] { width: 100%; padding: 20px; background: #003b5c; color: #fff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; transition: background 0.3s; }
         button[type="submit"]:hover { background: #00263c; }
 
@@ -136,7 +141,7 @@
         footer .container { max-width: 1250px; margin: auto; }
         footer p { margin-bottom: 20px; line-height: 1.8; text-align: justify; }
 
-        /* Custom Modal Pop-Up CSS - Z-INDEX BOOSTED TO MAXIMUM */
+        /* Custom Modal Pop-Up CSS */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 25, 40, 0.85); z-index: 999999; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
         .modal-content { background: #fff; padding: 50px; border-radius: 8px; max-width: 800px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.5); text-align: left; max-height: 90vh; overflow-y: auto; }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: #999; transition: color 0.3s; }
@@ -147,7 +152,7 @@
         .modal-content ul { margin-top: 15px; padding-left: 20px; line-height: 1.8; color: #444; }
         .modal-content li { margin-bottom: 10px; }
 
-        /* Chat Widget - Z-INDEX BOOSTED TO MAXIMUM */
+        /* Chat Widget */
         .chat-widget { position: fixed !important; bottom: 30px !important; right: 30px !important; background: #fff !important; padding: 20px !important; border-radius: 8px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important; display: flex !important; flex-direction: column !important; align-items: center !important; cursor: pointer !important; z-index: 999999 !important; max-width: 250px !important; transition: transform 0.3s !important; border: 1px solid #eaeaea !important; }
         .chat-widget:hover { transform: translateY(-5px) !important; }
         .chat-heads { display: flex; justify-content: center; margin-top: -40px; margin-bottom: 10px; }
@@ -183,12 +188,18 @@
     <h1>Strategic Wealth Management & Fiduciary Guidance</h1>
     <p class="subtitle">Providing fully integrated financial planning, institutional investment strategies, and rigorous fiduciary oversight for individuals, families, and business owners.</p>
     
-    <!-- Main Screen Action Buttons Stack (Now a 2x2 Grid) -->
+    <!-- Main Screen Action Buttons Stack -->
     <div class="hero-badge-container">
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
+        
+        <!-- Business Owner Button (Left alone!) -->
         <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Retirement Plan Simulator</button>
+        
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
+        
+        <!-- NEW Dedicated Capital Gains Button -->
+        <button class="hero-badge highlight" onclick="openModal('capGainsModal')">Capital Gains Calculator</button>
     </div>
     
     <!-- Professional Alliance Buttons Front and Center -->
@@ -399,6 +410,28 @@
 </footer>
 
 <!-- MODALS (Pop-Ups) -->
+
+<!-- NEW: Capital Gains Calculator Modal -->
+<div id="capGainsModal" class="modal-overlay" onclick="closeModal('capGainsModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal('capGainsModal')">✕</span>
+        <h2>Capital Gains Mitigation Calculator</h2>
+        <p>Select the type of asset you are selling to evaluate your tax mitigation options:</p>
+
+        <div class="input-group" style="margin-top: 20px;">
+            <label for="assetType" style="font-weight: bold; color: #003b5c; display: block; margin-bottom: 10px;">Type of Asset:</label>
+            <select id="assetType">
+                <option value="" disabled selected>Select an option...</option>
+                <option value="business">Sale of a Business</option>
+                <option value="home">Sale of a Home</option>
+                <option value="stocks">Sale of Stocks</option>
+                <option value="real_estate">Sale of Real Estate Investment</option>
+            </select>
+        </div>
+
+        <button class="alliance-btn" style="width: 100%; max-width: 100%; margin-top: 20px;" onclick="window.open('capital_gains_calculator.html', '_blank'); closeModal('capGainsModal');">Proceed to Calculator</button>
+    </div>
+</div>
 
 <!-- INSIGHTS MODALS -->
 
@@ -771,7 +804,7 @@
     <div class="chat-text">Got any questions? I am happy to help.</div>
 </div>
 
-<!-- THE JAVASCRIPT ENGINE (Moved to the bottom for reliability) -->
+<!-- THE JAVASCRIPT ENGINE -->
 <script>
     function openModal(id) {
         var modal = document.getElementById(id);
