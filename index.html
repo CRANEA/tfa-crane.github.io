@@ -193,12 +193,12 @@
         <button class="hero-badge" onclick="openModal('secModal')">SEC Registered Investment Advisor</button>
         <button class="hero-badge" onclick="openModal('ltcModal')">Long-Term Care / Asset Protection</button>
         
-        <!-- Business Owner Button (Left alone!) -->
+        <!-- Business Owner Button -->
         <button class="hero-badge" onclick="window.open('combo_plan_simulator.html', '_blank')">Business Owner Retirement Plan Simulator</button>
         
         <button class="hero-badge" onclick="openModal('analyzerModal')">Fiduciary Retirement Analyzer</button>
         
-        <!-- NEW Dedicated Capital Gains Button -->
+        <!-- Dedicated Capital Gains Button -->
         <button class="hero-badge highlight" onclick="openModal('capGainsModal')">Capital Gains Calculator</button>
     </div>
     
@@ -380,7 +380,7 @@
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section (Upgraded with Anti-Spam & Bot Protection) -->
 <section id="contact-section" class="section">
     <h2 class="section-title">Start the Conversation</h2>
     <div class="form-container">
@@ -388,10 +388,18 @@
         <form action="https://formsubmit.co/crane_avi@aipfinancial.net" method="POST">
             <input type="hidden" name="_subject" value="New Website Lead!">
             <input type="hidden" name="_cc" value="9494452323@vtext.com">
-            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Honeypot trap: Invisible to humans, blocks automated spam bots -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <!-- Enable CAPTCHA verification -->
+            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://cranea.github.io/tfa-crane.github.io/">
 
-            <div class="input-group"><input type="text" name="FullName" placeholder="Full Name" required></div>
+            <!-- Pattern blocks URLs/links from being submitted in the Name field -->
+            <div class="input-group">
+                <input type="text" name="FullName" placeholder="Full Name" pattern="^(?!.*(http|https|www\.|\.[a-z]{2,})).*$" title="Please enter a valid name without links or URLs." required>
+            </div>
             <div class="input-group"><input type="email" name="Email" placeholder="Email Address" required></div>
             <div class="input-group"><input type="tel" name="Phone" placeholder="Phone Number"></div>
             
@@ -411,7 +419,7 @@
 
 <!-- MODALS (Pop-Ups) -->
 
-<!-- NEW: Capital Gains Calculator Modal -->
+<!-- Capital Gains Calculator Modal -->
 <div id="capGainsModal" class="modal-overlay" onclick="closeModal('capGainsModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <span class="modal-close" onclick="closeModal('capGainsModal')">✕</span>
@@ -432,8 +440,6 @@
         <button class="alliance-btn" style="width: 100%; max-width: 100%; margin-top: 20px;" onclick="window.open('capital_gains_calculator.html', '_blank'); closeModal('capGainsModal');">Proceed to Calculator</button>
     </div>
 </div>
-
-<!-- INSIGHTS MODALS -->
 
 <!-- Avoid Probate Modal -->
 <div id="probateModal" class="modal-overlay" onclick="closeModal('probateModal')">
@@ -656,7 +662,6 @@
             <a href="RealEsateAgents%20The_Wealth_Architecture_Alliance.pdf" target="_blank" class="alliance-btn outline" style="flex: 1; text-align: center; min-width: 200px; color: #009b9f;">📄 Wealth Architecture Alliance</a>
         </div>
         
-        <img src="RE%20Agemts.png" style="max-width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee;" onerror="this.style.display='none'">
         <img src="CommericalREAgents2.png" alt="Commercial Real Estate Agents" style="max-width: 100%; border-radius: 6px; margin-bottom: 15px; border: 1px solid #eee;" onerror="this.style.display='none'">
         <img src="Luxury_Listing_Tax_Strategy.png" alt="Luxury Listing Tax Strategy" style="max-width: 100%; border-radius: 6px; margin-bottom: 20px; border: 1px solid #eee;" onerror="this.style.display='none'">
         
